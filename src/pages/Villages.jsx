@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
+import Slider from '../components/Slider';
 
 const Villages = () => {
     const { t } = useLanguage();
@@ -74,6 +75,8 @@ const Villages = () => {
                 </motion.div>
             </section>
 
+            <Slider />
+
             <section className="visit-grid-section">
                 <div className="container">
                     <motion.h2
@@ -106,7 +109,7 @@ const Villages = () => {
                                         <div className="visit-card-content">
                                             <h3>{village.name}</h3>
                                             <p>{village.desc}</p>
-                                            <div className="btn" style={{ display: 'inline-block', marginTop: '1rem', fontSize: '0.9rem' }}>
+                                            <div className="explore-btn-sm" style={{ marginTop: '1rem' }}>
                                                 {t('Read More', 'थप पढ्नुहोस्')}
                                             </div>
                                         </div>

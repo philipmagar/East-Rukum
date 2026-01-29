@@ -120,32 +120,141 @@ const Home = () => {
                 </div>
             </section>
 
+            <Slider />
+
+            {/* CULTURAL SECTION */}
+            <section className="storytelling-section">
+                <div className="container">
+                    <div className="story-content">
+                        <motion.div
+                            className="story-label"
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            {t('The Living Heritage', 'जीवन्त सम्पदा')}
+                        </motion.div>
+                        <motion.h2
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            {t('The Heart of the Kham Magar People', 'खाम मगर समुदायको हृदय')}
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                        >
+                            {t(
+                                "Step into a world where time-honored traditions breathe through every stone-roofed house and every locally woven shawl. In East Rukum, culture isn't just a performance—it's the way we farm, the way we celebrate the changing seasons, and the quiet resilience we show in the face of the mountains. Our dialects carry the echoes of our ancestors, and our hospitality is as warm as the hearths in our homes.",
+                                "एउटा यस्तो संसारमा पाइला चाल्नुहोस् जहाँ युगौंदेखिका परम्पराहरू प्रत्येक ढुङ्गाले छाएका घर र स्थानीय रूपमा बुनिएका पछ्यौरीहरूमा जीवित छन्। पूर्वी रुकुममा, संस्कृति केवल एक प्रदर्शन होइन—यो हाम्रो खेती गर्ने तरिका, मौसम परिवर्तनको उत्सव मनाउने तरिका र हिमालको अगाडि हामीले देखाउने शान्त लचिलोपन हो। हाम्रा बोलीहरूमा हाम्रा पुर्खाहरूको प्रतिध्वनि सुनिन्छ र हाम्रो आतिथ्य हाम्रा घरका चुल्हाहरू जत्तिकै न्यानो छ।"
+                            )}
+                        </motion.p>
+                        <Link to="/culture.html" className="explore-btn-sm" style={{ marginTop: '1.5rem' }}>
+                            {t('Immerse in Culture', 'संस्कृतिमा रमाउनुहोस्')}
+                        </Link>
+                    </div>
+                    <motion.div
+                        className="story-visual"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <img src="/images/kham-culture.jpg" alt="Kham Magar Culture" className="no-watermark" />
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* NATURE SECTION */}
+            <section className="storytelling-section reverse">
+                <div className="container">
+                    <div className="story-content">
+                        <motion.div
+                            className="story-label"
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            {t('Pristine Landscapes', 'अछूत प्राकृतिक दृश्य')}
+                        </motion.div>
+                        <motion.h2
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            {t("Nature's Unbroken Silence", 'प्रकृतिको अटुट मौनता')}
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.3 }}
+                        >
+                            {t(
+                                "From the mirror-like reflections in the lakes of Rukumkot to the challenging trails that lead to the base of Sisne Himal, nature here remains untouched and pure. It's a sanctuary for the soul, where the only sounds are the whistling of the mountain wind and the distant bells of grazing sheep. Here, we live in harmony with the wild, respecting the peaks that define our horizon.",
+                                "रुकुमकोटका तालहरूमा देखिने ऐना जस्तै प्रतिबिम्बदेखि सिस्ने हिमालको फेदीसम्म पुग्ने चुनौतीपूर्ण पदमार्गसम्म, यहाँको प्रकृति अछूत र शुद्ध छ। यो आत्माको लागि एउटा शरणस्थल हो, जहाँ हिमाली हावाको सुस्केरा र चरिरहेका भेडाहरूको टाढाको घण्टीको आवाज मात्र सुनिन्छ। यहाँ, हामी जंगली प्रकृतिसँग सद्भावमा बस्छौं र हाम्रो क्षितिज परिभाषित गर्ने टाकुरीहरूको सम्मान गर्छौं।"
+                            )}
+                        </motion.p>
+                        <Link to="/places.html" className="explore-btn-sm" style={{ marginTop: '1.5rem' }}>
+                            {t('Discover the Wild', 'प्रकृति खोज्नुहोस्')}
+                        </Link>
+                    </div>
+                    <motion.div
+                        className="story-visual"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <img src="/images/lake with mountain.jpg" alt="Rukum Nature" className="no-watermark" />
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* FEATURES TITLE */}
+            <section style={{ textAlign: 'center', paddingTop: '4rem' }}>
+                <h2 className="section-title" style={{ marginBottom: '1rem' }}>{t('Journey Through the District', 'जिल्लाको यात्रा')}</h2>
+                <p style={{ maxWidth: '700px', margin: '0 auto 3rem' }}>
+                    {t('Whether you seek adventure, spiritual peace, or a connection with indigenous history, East Rukum has a path for you.', 'चाहे तपाईं साहसिक कार्य, आध्यात्मिक शान्ति, वा आदिवासी इतिहाससँगको सम्बन्ध खोज्नुहुन्छ, पूर्वी रुकुममा तपाईंको लागि एउटा बाटो छ।')}
+                </p>
+            </section>
+
             {/* FEATURES */}
             <section className="features">
                 <div className="feature-card">
                     <img src="/images/lukum village.jpg" alt="Village in Rukum" />
                     <div className="feature-card-content">
-                        <h3>🏔️ {t('Places', 'स्थानहरू')}</h3>
-                        <p>{t('Sisne Himal, Rukumkot, Kankri and more.', 'सिस्ने हिमाल, रुकुमकोट, कांक्री र थप।')}</p>
+                        <h3> {t('Silent Peaks', 'मौन टाकुराहरू')}</h3>
+                        <p>{t('Walk beneath the shadow of Sisne, the mountain that has never been climbed, and feel its ancient power.', 'सिस्ने हिमालको छायामुनि हिंड्नुहोस् र यसको प्राचीन शक्तिको अनुभव गर्नुहोस्।')}</p>
                     </div>
                 </div>
                 <div className="feature-card">
                     <img src="/images/ChauriLakhePhoto.jpg" alt="Culture" />
                     <div className="feature-card-content">
-                        <h3>🎭 {t('Culture', 'संस्कृति')}</h3>
-                        <p>{t('Kham Magar traditions, language, and festivals.', 'खाम मगर परम्परा, भाषा र चाडपर्व।')}</p>
+                        <h3> {t('Vibrant Soul', 'जीवन्त आत्मा')}</h3>
+                        <p>{t('Witness the sacred dances and rhythmic songs that tell the story of a people forged by the hills.', 'पहाडहरूले बनाएका मानिसहरूको कथा बताउने पवित्र नृत्य र लयबद्ध गीतहरूको साक्षी बन्नुहोस्।')}</p>
                     </div>
                 </div>
                 <div className="feature-card">
                     <img src="/images/jeep crossing river.jpg" alt="Travel" className="no-watermark" />
                     <div className="feature-card-content">
-                        <h3>🛣️ {t('Travel', 'यात्रा')}</h3>
-                        <p>{t('Routes, homestays, and local guidance.', 'मार्ग, होमस्टे र स्थानीय मार्गदर्शन।')}</p>
+                        <h3> {t('The Rugged Path', 'कठिन मार्ग')}</h3>
+                        <p>{t('Travel through wild rivers and lush forests to find hidden hamlets where hospitality knows no bounds.', 'लुकेका बस्तीहरू फेला पार्न जंगली नदी र हरियाली जंगलहरूको यात्रा गर्नुहोस्।')}</p>
                     </div>
                 </div>
             </section>
 
-            <Slider />
+            <section style={{ textAlign: 'center', padding: '0 2rem 4rem' }}>
+                <Link to="/places.html" className="explore-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                    {t('Explore All Places', 'सबै स्थानहरू अन्वेषण गर्नुहोस्')}
+                </Link>
+            </section>
+
         </main>
     );
 };

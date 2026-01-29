@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
 
@@ -71,6 +72,18 @@ const About = () => {
                         <img src="/images/rukum-village.jpg" alt="Eastern Rukum Village" className="no-watermark" />
                     </motion.div>
                 </div>
+            </section>
+            <section className="intro" style={{ borderTop: '1px solid #eee', textAlign: 'center', padding: '4rem 2rem' }}>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
+                    <h2 style={{ marginBottom: '2rem' }}>{t('Ready to see our villages?', 'हाम्रा गाउँहरू हेर्न तयार हुनुहुन्छ?')}</h2>
+                    <Link to="/villages.html" className="explore-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                        {t('Explore Villages', 'गाउँहरू अन्वेषण गर्नुहोस्')}
+                    </Link>
+                </motion.div>
             </section>
         </main>
     );

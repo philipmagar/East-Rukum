@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const slidesData = [
     {
         img: '/images/autumn taka.png',
         en: 'Autumn Colors in Taka',
-        np: 'तकालीगाउँको शरद ऋतु',
+        np: 'तक गाउँको शरद ऋतु',
     },
     {
         img: '/images/lake with mountain.jpg',
@@ -20,7 +21,7 @@ const slidesData = [
     {
         img: '/images/taka snowing .png',
         en: 'Winter in Taka Village',
-        np: 'तकालीगाउँको हिउँद',
+        np: 'तक गाउँको हिउँद',
     },
     {
         img: '/images/maikot.png',
@@ -32,51 +33,123 @@ const slidesData = [
 const Slider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const { t } = useLanguage();
+    const [direction, setDirection] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            nextSlide();
-        }, 5000);
+            paginate(1);
+        }, 6000);
         return () => clearInterval(interval);
     }, [currentIndex]);
 
-    const nextSlide = () => {
-        setCurrentIndex((prev) => (prev + 1) % slidesData.length);
+    const paginate = (newDirection) => {
+        setDirection(newDirection);
+        setCurrentIndex((prev) => (prev + newDirection + slidesData.length) % slidesData.length);
     };
 
-    const prevSlide = () => {
-        setCurrentIndex((prev) => (prev - 1 + slidesData.length) % slidesData.length);
+    const variants = {
+        enter: (direction) => ({
+            x: direction > 0 ? 1000 : -1000,
+            opacity: 0,
+            scale: 1.1
+        }),
+        center: {
+            zIndex: 1,
+            x: 0,
+            opacity: 1,
+            scale: 1,
+            transition: {
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.6 }
+            }
+        },
+        exit: (direction) => ({
+            zIndex: 0,
+            x: direction < 0 ? 1000 : -1000,
+            opacity: 0,
+            scale: 0.9,
+            transition: {
+                x: { type: "spring", stiffness: 300, damping: 30 },
+                opacity: { duration: 0.4 }
+            }
+        })
     };
 
     return (
-        <section className="gallery-section">
-            <h2>{t('Visual Journey', 'दृश्य यात्रा')}</h2>
-            <div className="slider-container">
-                <div className="slider">
-                    {slidesData.map((slide, index) => (
-                        <div
-                            key={index}
-                            className={`slide ${index === currentIndex ? 'active' : ''}`}
-                            style={{ display: index === currentIndex ? 'block' : 'none' }}
-                        >
-                            <img src={slide.img} alt={slide.en} className="no-watermark" />
-                            <div className="slide-caption">{t(slide.en, slide.np)}</div>
+        <section className="premium-gallery">
+            <div className="gallery-header">
+                <motion.span
+                    className="gallery-tag"
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
+                    {t('Moments of Grace', 'ग्रेसका क्षणहरू')}
+                </motion.span>
+                <motion.h2
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                >
+                    {t('Witness the Unseen Beauty', 'अनदेखा सुन्दरताको साक्षी')}
+                </motion.h2>
+            </div>
+
+            <div className="premium-slider-wrapper">
+                <AnimatePresence initial={false} custom={direction}>
+                    <motion.div
+                        key={currentIndex}
+                        custom={direction}
+                        variants={variants}
+                        initial="enter"
+                        animate="center"
+                        exit="exit"
+                        className="premium-slide"
+                    >
+                        <img
+                            src={slidesData[currentIndex].img}
+                            alt={slidesData[currentIndex].en}
+                            className="no-watermark"
+                        />
+                        <div className="premium-caption">
+                            <motion.div
+                                className="caption-content"
+                                initial={{ y: 20, opacity: 0 }}
+                                animate={{ y: 0, opacity: 1 }}
+                                transition={{ delay: 0.4 }}
+                            >
+                                <h3>{t(slidesData[currentIndex].en, slidesData[currentIndex].np)}</h3>
+                                <div className="caption-line"></div>
+                                <p>{t('Captured in the heart of East Rukum', 'पूर्वी रुकुमको हृदयमा कैद गरिएको')}</p>
+                            </motion.div>
                         </div>
-                    ))}
+                    </motion.div>
+                </AnimatePresence>
+
+                <div className="slider-nav">
+                    <button className="nav-btn prev" onClick={() => paginate(-1)}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button className="nav-btn next" onClick={() => paginate(1)}>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
                 </div>
-                <button className="slider-btn prev" onClick={prevSlide}>
-                    &#10094;
-                </button>
-                <button className="slider-btn next" onClick={nextSlide}>
-                    &#10095;
-                </button>
-                <div className="slider-dots">
+
+                <div className="premium-dots">
                     {slidesData.map((_, index) => (
-                        <div
+                        <motion.div
                             key={index}
-                            className={`dot ${index === currentIndex ? 'active' : ''}`}
-                            onClick={() => setCurrentIndex(index)}
-                        ></div>
+                            className={`p-dot ${index === currentIndex ? 'active' : ''}`}
+                            onClick={() => {
+                                setDirection(index > currentIndex ? 1 : -1);
+                                setCurrentIndex(index);
+                            }}
+                            whileHover={{ scale: 1.2 }}
+                            animate={{
+                                width: index === currentIndex ? 40 : 10,
+                                backgroundColor: index === currentIndex ? "#fff" : "rgba(255,255,255,0.4)"
+                            }}
+                        />
                     ))}
                 </div>
             </div>

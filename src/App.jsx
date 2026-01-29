@@ -6,9 +6,8 @@ import About from './pages/About';
 import Visit from './pages/Visit';
 import Villages from './pages/Villages';
 import Culture from './pages/Culture';
-import Stories from './pages/Stories';
 import Contact from './pages/Contact';
-import TakaVillage from './pages/TakaVillage';
+import TakaVillage from './pages/TakVillage';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -24,7 +23,6 @@ function App() {
                 <Route path="/villages.html" element={<Villages />} />
                 <Route path="/taka-village" element={<TakaVillage />} />
                 <Route path="/culture.html" element={<Culture />} />
-                <Route path="/stories.html" element={<Stories />} />
                 <Route path="/contact.html" element={<Contact />} />
             </Routes>
             <Footer />
