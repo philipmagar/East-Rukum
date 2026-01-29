@@ -1,0 +1,35 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import About from './pages/About';
+import Visit from './pages/Visit';
+import Villages from './pages/Villages';
+import Culture from './pages/Culture';
+import Stories from './pages/Stories';
+import Contact from './pages/Contact';
+import TakaVillage from './pages/TakaVillage';
+import ScrollToTop from './components/ScrollToTop';
+
+function App() {
+    return (
+        <Router>
+            <ScrollToTop />
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/index.html" element={<Home />} />
+                <Route path="/about.html" element={<About />} />
+                <Route path="/places.html" element={<Visit />} />
+                <Route path="/villages.html" element={<Villages />} />
+                <Route path="/taka-village" element={<TakaVillage />} />
+                <Route path="/culture.html" element={<Culture />} />
+                <Route path="/stories.html" element={<Stories />} />
+                <Route path="/contact.html" element={<Contact />} />
+            </Routes>
+            <Footer />
+        </Router>
+    );
+}
+
+export default App;
