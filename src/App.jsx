@@ -9,11 +9,13 @@ import Culture from './pages/Culture';
 import Contact from './pages/Contact';
 import TakaVillage from './pages/TakVillage';
 import ScrollToTop from './components/ScrollToTop';
+import BackToTop from './components/BackToTop';
 
 function App() {
     return (
         <Router>
             <ScrollToTop />
+            <BackToTop />
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />

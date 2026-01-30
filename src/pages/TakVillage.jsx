@@ -1,16 +1,19 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import MusicPlayer from '../components/MusicPlayer';
 
 const TakaVillage = () => {
     const { t } = useLanguage();
     const [selectedImg, setSelectedImg] = useState(null);
 
     const takaImages = [
-        { src: '/images/taka.jpg', alt: 'Taka Main', caption: t('Main Entrance to Taka', 'तकसेरा गाउँको मुख्य प्रवेशद्वार') },
-        { src: '/images/autumn taka.png', alt: 'Autumn Taka', caption: t('Golden Autumn in Taka', 'तकसेराको स्वर्ण शरद ऋतु') },
-        { src: '/images/rainy taka .png', alt: 'Rainy Taka', caption: t('Taka during the Monsoon', 'मनसुनमा तकसेरा गाउँ') },
-        { src: '/images/taka snowing .png', alt: 'Winter Taka', caption: t('A Snowy Winter in Taka', 'तकसेराको हिउँद र शीतलहर') },
+        { src: '/images/villages/Tak village.jpg', alt: 'Classic Taka', caption: t('Traditional Architecture', 'परम्परागत वास्तुकला') },
+        { src: '/images/villages/tak during rainy season.png', alt: 'Rainy Season', caption: t('Lush Green Monsoon', 'हरियाली मनसुन') },
+        { src: '/images/villages/tak village from from far.jpg', alt: 'Panoramic View', caption: t('Village from Afar', 'टाढाबाट गाउँको दृश्य') },
+        { src: '/images/villages/tak school.jpg', alt: 'Tak School', caption: t('Community School', 'सामुदायिक विद्यालय') },
+        { src: '/images/villages/Tak villagee.jpg', alt: 'Village Life', caption: t('Daily Life in Tak', 'तकमा दैनिक जीवन') },
+        { src: '/images/villages/tak.jpg', alt: 'Historic Streets', caption: t('Ancient Pathways', 'प्राचीन गोरेटोहरू') },
     ];
 
     return (
@@ -46,7 +49,7 @@ const TakaVillage = () => {
                 )}
             </AnimatePresence>
 
-            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/taka.jpg')" }}>
+            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/villages/Tak village.jpg')" }}>
                 <motion.div
                     className="hero-content"
                     initial={{ opacity: 0, y: 30 }}
@@ -83,7 +86,7 @@ const TakaVillage = () => {
                     </motion.div>
                     <motion.div
                         className="intro-image"
-                        onClick={() => setSelectedImg({ src: '/images/autumn taka.png', alt: 'Autumn Taka', caption: t('Golden Autumn in Taka', 'तकाको स्वर्ण शरद ऋतु') })}
+                        onClick={() => setSelectedImg({ src: '/images/villages/tak village from from far.jpg', alt: 'Panoramic Tak', caption: t('A Scenic View of Taka', 'तकसेराको मनोरम दृश्य') })}
                         style={{ cursor: 'pointer' }}
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -91,7 +94,7 @@ const TakaVillage = () => {
                         transition={{ duration: 0.6 }}
                         whileHover={{ scale: 1.02 }}
                     >
-                        <img src="/images/autumn taka.png" alt="Autumn Taka" className="no-watermark" />
+                        <img src="/images/villages/tak village from from far.jpg" alt="Panoramic Tak" className="no-watermark" />
                         <div style={{ fontSize: '0.8rem', color: '#666', marginTop: '5px' }}>{t('Click to enlarge', 'ठूलो बनाउन क्लिक गर्नुहोस्')}</div>
                     </motion.div>
                 </div>
@@ -99,7 +102,7 @@ const TakaVillage = () => {
 
             <section className="visit-grid-section">
                 <div className="container">
-                    <h2 className="section-title">{t('The Seasons of Taka', 'तकसेराका मौसमहरू')}</h2>
+                    <h2 className="section-title">{t('Gallery: Shades of Tak', 'ग्यालेरी: तकका विभिन्न रूपहरू')}</h2>
                     <motion.div
                         className="visit-grid"
                         initial={{ opacity: 0 }}
@@ -131,14 +134,14 @@ const TakaVillage = () => {
                 <div className="container">
                     <motion.div
                         className="intro-image"
-                        onClick={() => setSelectedImg({ src: '/images/homestay.jpg', alt: 'Homestay', caption: t('Local Homestay Experience', 'स्थानीय होमस्टे अनुभव') })}
+                        onClick={() => setSelectedImg({ src: '/images/villages/Tak villagee.jpg', alt: 'Village Life', caption: t('Authentic Village Atmosphere', 'प्रामाणिक गाउँको वातावरण') })}
                         style={{ cursor: 'pointer' }}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         whileHover={{ scale: 1.02 }}
                     >
-                        <img src="/images/homestay.jpg" alt="Homestay" />
+                        <img src="/images/villages/Tak villagee.jpg" alt="Village Life" />
                         <div style={{ fontSize: '0.8rem', color: '#666', marginTop: '5px' }}>{t('Click to enlarge', 'ठूलो बनाउन क्लिक गर्नुहोस्')}</div>
                     </motion.div>
                     <motion.div
@@ -157,6 +160,7 @@ const TakaVillage = () => {
                     </motion.div>
                 </div>
             </section>
+            <MusicPlayer />
         </main>
     );
 };

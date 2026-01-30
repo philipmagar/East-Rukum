@@ -4,27 +4,27 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const slidesData = [
     {
-        img: '/images/autumn taka.png',
-        en: 'Autumn Colors in Taka',
-        np: 'तक गाउँको शरद ऋतु',
+        img: '/images/villages/tak.jpg',
+        en: 'Historic Taka Village',
+        np: 'ऐतिहासिक तक गाउँ',
     },
     {
-        img: '/images/lake with mountain.jpg',
+        img: '/images/place to visit/rukumkot lake.jpg',
         en: 'Serene Rukumkot Lake',
         np: 'शान्त रुकुमकोट ताल',
     },
     {
-        img: '/images/sheep grazing in wild.jpg',
+        img: '/images/lifestyle/sheep grazing in wild.jpg',
         en: 'Highland Pastures',
         np: 'उच्च हिमाली बुकी',
     },
     {
-        img: '/images/taka snowing .png',
-        en: 'Winter in Taka Village',
-        np: 'तक गाउँको हिउँद',
+        img: '/images/lifestyle/snow.jpg',
+        en: 'Winter Resilience',
+        np: 'जाडो लचिलोपन',
     },
     {
-        img: '/images/maikot.png',
+        img: '/images/villages/maikot village.png',
         en: 'Historic Maikot Village',
         np: 'ऐतिहासिक मैकोट गाउँ',
     },
@@ -125,15 +125,6 @@ const Slider = () => {
                         </div>
                     </motion.div>
                 </AnimatePresence>
-
-                <div className="slider-nav">
-                    <button className="nav-btn prev" onClick={() => paginate(-1)}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                    </button>
-                    <button className="nav-btn next" onClick={() => paginate(1)}>
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </button>
-                </div>
 
                 <div className="premium-dots">
                     {slidesData.map((_, index) => (

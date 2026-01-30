@@ -48,7 +48,87 @@ const Culture = () => {
                         </p>
                     </div>
                     <div className="intro-image">
-                        <img src="/images/kham-culture.jpg" alt="Kham Magar traditional dress and dance" />
+                        <img src="/images/lifestyle/shepard lifestyle.jpg" alt="Kham Magar traditional dress and dance" />
+                    </div>
+                </div>
+            </section>
+
+            {/* LIFESTYLE GALLERY */}
+            <section className="visit-grid-section" style={{ background: '#f8f9fa' }}>
+                <div className="container">
+                    <h2 className="section-title">{t('Daily Life in the Mountains', 'पहाडमा दैनिक जीवन')}</h2>
+                    <p style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem', color: '#666' }}>
+                        {t(
+                            'Experience the authentic lifestyle of Eastern Rukum through the eyes of its people',
+                            'पूर्वी रुकुमको प्रामाणिक जीवनशैली यहाँका मानिसहरूको नजरबाट अनुभव गर्नुहोस्'
+                        )}
+                    </p>
+
+                    <div className="visit-grid">
+                        <div className="visit-card">
+                            <img src="/images/lifestyle/shepard lifestyle.jpg" alt="Shepherd Lifestyle" className="no-watermark" />
+                            <div className="visit-card-content">
+                                <h3>{t('Pastoral Heritage', 'पशुपालन सम्पदा')}</h3>
+                                <p>
+                                    {t(
+                                        'Shepherds tend their flocks in high-altitude pastures, continuing centuries-old traditions of animal husbandry.',
+                                        'गोठालाहरूले उच्च उचाइको चरनमा आफ्ना बगालहरू हेरचाह गर्छन्, शताब्दीयौं पुरानो पशुपालन परम्परा जारी राख्दै।'
+                                    )}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="visit-card">
+                            <img src="/images/lifestyle/sheep grazing in wild.jpg" alt="Sheep Grazing" className="no-watermark" />
+                            <div className="visit-card-content">
+                                <h3>{t('Highland Grazing', 'उच्च भूमि चरन')}</h3>
+                                <p>
+                                    {t(
+                                        'Sheep and goats graze freely in pristine meadows, providing wool and sustenance to mountain communities.',
+                                        'भेडा र बाख्राहरू शुद्ध घाँसे मैदानमा स्वतन्त्र रूपमा चर्छन्, पहाडी समुदायहरूलाई ऊन र जीविका प्रदान गर्दै।'
+                                    )}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="visit-card">
+                            <img src="/images/lifestyle/mancrossing river.jpg" alt="River Crossing" className="no-watermark" />
+                            <div className="visit-card-content">
+                                <h3>{t('Mountain Trails', 'पहाडी बाटोहरू')}</h3>
+                                <p>
+                                    {t(
+                                        'Villagers navigate challenging terrain and river crossings as part of their daily journey.',
+                                        'गाउँलेहरूले आफ्नो दैनिक यात्राको भागको रूपमा चुनौतीपूर्ण भूभाग र नदी पार गर्छन्।'
+                                    )}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="visit-card">
+                            <img src="/images/lifestyle/snow.jpg" alt="Winter Life" className="no-watermark" />
+                            <div className="visit-card-content">
+                                <h3>{t('Winter Resilience', 'जाडो लचिलोपन')}</h3>
+                                <p>
+                                    {t(
+                                        'Communities adapt to harsh winter conditions with traditional knowledge and strong communal bonds.',
+                                        'समुदायहरू परम्परागत ज्ञान र बलियो सामुदायिक बन्धनका साथ कठोर जाडो अवस्थामा अनुकूलन गर्छन्।'
+                                    )}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="visit-card">
+                            <img src="/images/lifestyle/sheep.jpg" alt="Livestock Care" className="no-watermark" />
+                            <div className="visit-card-content">
+                                <h3>{t('Livestock Care', 'पशुधन हेरचाह')}</h3>
+                                <p>
+                                    {t(
+                                        'Animals are integral to mountain life, providing food, wool, and companionship to families.',
+                                        'जनावरहरू पहाडी जीवनको अभिन्न अंग हुन्, परिवारहरूलाई खाना, ऊन र साथ प्रदान गर्दै।'
+                                    )}
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
