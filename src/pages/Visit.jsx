@@ -18,34 +18,26 @@ const Visit = () => {
         <main>
             <section className="hero">
                 <div className="hero-content">
-                    <h1>{t('Places to Visit', 'घुम्नलायक स्थानहरू')}</h1>
-                    <p>{t('Discover mountains, villages, and cultural landmarks', 'हिमाल, गाउँ र सांस्कृतिक स्थलहरू पत्ता लगाउनुहोस्')}</p>
+                    <h1>{t('Places to go', 'घुम्ने ठाउँहरू')}</h1>
+                    <p>{t('There are mountains, villages, and some old temples to see.', 'यहाँ हिमाल, गाउँ र केही पुराना मन्दिरहरू हेर्न पाइन्छ।')}</p>
                 </div>
             </section>
 
-            {/* FEATURED: CHAURIKHARKA */}
             <section className="storytelling-section" style={{ background: '#f0f4f8' }}>
                 <div className="container">
-                    <motion.div
-                        className="story-content"
-                        style={{ maxWidth: '100%', marginBottom: '2rem' }}
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
+                    <motion.div className="story-content"style={{ maxWidth: '100%', marginBottom: '2rem' }}initial={{ opacity: 0, y: 20 }}whileInView={{ opacity: 1, y: 0 }}viewport={{ once: true }}>
                         <div className="story-label" style={{ color: '#2c3e50', background: '#e1e8ed' }}>
-                            {t('Hidden Gem', 'लुकेको गन्तव्य')}
+                            {t('Quiet place', 'शान्त ठाउँ')}
                         </div>
-                        <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#1a202c' }}>{t('Chaurikharka The Highland Paradise', 'चौरीखर्क - उच्च हिमाली स्वर्ग')}</h2>
+                        <h2 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#1a202c' }}>{t('Chaurikharka', 'चौरीखर्क')}</h2>
                         <p style={{ fontSize: '1.1rem', maxWidth: '800px', marginBottom: '2rem' }}>
                             {t(
-                                "Chaurikharka is not just a grazing ground; it is a breathtaking expanse of alpine meadows sitting in the lap of the Himalayas. Known for its lush greenery in the monsoon and golden hues in autumn, it offers unrivaled peace. This is where the sky touches the earth, and the only sound you hear is the whistle of the mountain wind and the bells of grazing cattle.",
-                                "चौरीखर्क केवल चरन क्षेत्र मात्र होइन; यो हिमालयको काखमा अवस्थित अल्पाइन घाँसे मैदानको एक मनमोहक विस्तार हो। मनसुनमा हरियाली र शरद ऋतुमा सुनौलो रङ्गका लागि परिचित, यसले अतुलनीय शान्ति प्रदान गर्दछ। यो त्‍यो ठाउँ हो जहाँ आकाशले पृथ्वीलाई छुन्छ, र तपाईँले सुन्ने एकमात्र आवाज पहाडी हावाको सुस्केरा र गाईवस्तुको घण्टी हो।"
+                                "It’s a big meadow, way up high. In the monsoon it gets really green, and in autumn everything turns gold. It feels very quiet here. Mostly you just hear the wind blowing and the bells on the cattle.",
+                                "यो माथि लेकमा रमाइलो पाटन हो। मनसुनमा यो एकदम हरियो हुन्छ, र शरद ऋतुमा सबै थोक सुनौलो देखिन्छ। यहाँ एकदम शान्त महसुस हुन्छ। धेरैजसो हावा चलेको र गाईवस्तुको घण्टी मात्र सुनिन्छ।"
                             )}
                         </p>
                     </motion.div>
 
-                    {/* CHAURIKHARKA AUTO SLIDER */}
                     <div className="chaurikharka-slider-container" style={{
                         position: 'relative',
                         borderRadius: '20px',
@@ -56,11 +48,7 @@ const Visit = () => {
                         background: '#000'
                     }}>
                         <AnimatePresence mode='wait'>
-                            <motion.img
-                                key={currentChauriIndex}
-                                src={`/images/place to visit/chaurikharka(${currentChauriIndex + 1}).jpg`}
-                                alt={`Chaurikharka View ${currentChauriIndex + 1}`}
-                                style={{
+                            <motion.img key={currentChauriIndex} src={`/images/place to visit/chaurikharka(${currentChauriIndex + 1}).jpg`} alt={`Chaurikharka View ${currentChauriIndex + 1}`} style={{
                                     width: '100%',
                                     height: '100%',
                                     objectFit: 'cover',
@@ -76,18 +64,10 @@ const Visit = () => {
                             />
                         </AnimatePresence>
 
-                        {/* Overlay Gradient */}
-                        <div style={{
-                            position: 'absolute',
-                            bottom: 0,
-                            left: 0,
-                            right: 0,
-                            height: '50%',
-                            background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
+                        <div style={{position: 'absolute',bottom: 0,left: 0,right: 0,height: '50%',background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
                             zIndex: 1
                         }}></div>
 
-                        {/* Slider Controls/Indicators */}
                         <div style={{
                             position: 'absolute',
                             bottom: '20px',
@@ -98,10 +78,7 @@ const Visit = () => {
                             gap: '10px'
                         }}>
                             {[0, 1, 2, 3, 4, 5].map((idx) => (
-                                <div
-                                    key={idx}
-                                    onClick={() => setCurrentChauriIndex(idx)}
-                                    style={{
+                                <div key={idx} onClick={() => setCurrentChauriIndex(idx)} style={{
                                         width: idx === currentChauriIndex ? '30px' : '10px',
                                         height: '10px',
                                         borderRadius: '5px',
@@ -115,8 +92,8 @@ const Visit = () => {
                     </div>
                     <p style={{ textAlign: 'center', fontStyle: 'italic', color: '#666' }}>
                         {t(
-                            "Experience the raw beauty of Chaurikharka — a quiet meeting of earth, sky, and wandering hearts.",
-                            "चौरीखर्कको कच्चा सुन्दरताको अनुभव गर्नुहोस् - जहाँ पृथ्वी, आकाश र भौँतारिने मनहरूको शान्त भेट हुन्छ।"
+                            "It feels real here. Just the ground, the sky, and you.",
+                            "यहाँ साँच्चिकै रमाइलो लाग्छ। बस जमिन, आकाश र तपाईं।"
                         )}
                     </p>
                 </div>
@@ -124,8 +101,8 @@ const Visit = () => {
 
             <section className="visit-grid-section">
                 <div className="container">
-                    <h2 className="section-title">{t('More Destinations', 'अन्य गन्तव्यहरू')}</h2>
-
+                    <h2 className="section-title">{t('Other places', 'अरु ठाउँहरू')}</h2>
+]
                     <div className="visit-grid">
                         <div className="visit-card">
                             <img src="/images/place to visit/sisne Himal.jpg" alt="Sisne Himal" />
@@ -133,34 +110,32 @@ const Visit = () => {
                                 <h3>{t('Sisne Himal', 'सिस्ने हिमाल')}</h3>
                                 <p>
                                     {t(
-                                        "Sisne Himal, also known as the Virgin Peak, is famous for trekking and panoramic views.",
-                                        "सिस्ने हिमाल, जसलाई भर्जिन पिक पनि भनिन्छ, पदयात्रा र सुन्दर दृश्यका लागि प्रसिद्ध छ।"
+                                        "People call it the Virgin Peak. It's really good for trekking if you like walking.",
+                                        "मान्छेहरू यसलाई भर्जिन पिक भन्छन्। यदि तपाईंलाई हिँड्न मन पर्छ भने यो ट्रेकिङको लागि राम्रो छ।"
                                     )}
                                 </p>
                             </div>
                         </div>
-
                         <div className="visit-card">
                             <img src="/images/place to visit/rukumkot lake.jpg" alt="Rukumkot" className="no-watermark" />
                             <div className="visit-card-content">
                                 <h3>{t('Rukumkot', 'रुकुमकोट')}</h3>
                                 <p>
                                     {t(
-                                        "A historic town with 52 lakes and 53 hills. Famous for Barah Temple and the scenic Rukumkot Lake.",
-                                        "५२ पोखरी ५३ टाकुरीको शहर। बराह मन्दिर र सुन्दर रुकुमकोट तालको लागि प्रसिद्ध।"
+                                        "It's an old town. They say there used to be 52 lakes around here.",
+                                        "एउटा पुरानो शहर। यहाँ वरिपरि ५२ वटा पोखरी थिए भन्छन्।"
                                     )}
                                 </p>
                             </div>
                         </div>
-
                         <div className="visit-card">
                             <img src="/images/place to visit/Thakur patan.png" alt="Thakur Patan" className="no-watermark" />
                             <div className="visit-card-content">
                                 <h3>{t('Thakur Patan', 'ठाकुर पाटन')}</h3>
                                 <p>
                                     {t(
-                                        "A high altitude meadow rich in biodiversity and stunning landscapes, perfect for adventure seekers.",
-                                        "जैवविविधता र आश्चर्यजनक परिदृश्यहरूले धनी उच्च उचाइको मैदान, साहसी खोज्नेहरूका लागि उपयुक्त।"
+                                        "It's high up in the hills. You can see a lot of different plants and animals.",
+                                        "यो धेरै माथि छ। त्यहाँ धेरै थरीका बोटबिरुवा र जनावरहरू देख्न पाइन्छ।"
                                     )}
                                 </p>
                             </div>
@@ -172,21 +147,20 @@ const Visit = () => {
                                 <h3>{t('Dhorpatan Hunting Reserve', 'धोरपाटन शिकार रिजर्भ')}</h3>
                                 <p>
                                     {t(
-                                        "Nepal's only hunting reserve, famous for Blue Sheep and Himalayan Tahr.",
-                                        "नेपालको एकमात्र शिकार आरक्ष, नीलो भेडा र हिमालयन थारका लागि प्रसिद्ध।"
+                                        "The only place in Nepal where hunting is allowed. You might see blue sheep.",
+                                        "नेपालमा शिकार गर्न पाइने एक मात्र ठाउँ। तपाईंले यहाँ नीलो भेडा देख्न सक्नुहुन्छ।"
                                     )}
                                 </p>
                             </div>
                         </div>
-
                         <div className="visit-card">
                             <img src="/images/place to visit/rukumkot lake (2).jpeg" alt="Rukumkot Lakes" className="no-watermark" />
                             <div className="visit-card-content">
-                                <h3>{t('Sacred Lakes', 'पवित्र तालहरू')}</h3>
+                                <h3>{t('Small Lakes', 'साना तालहरू')}</h3>
                                 <p>
                                     {t(
-                                        "Explore the hidden lakes around Rukumkot, each with its own myth and beauty.",
-                                        "रुकुमकोट वरपरका लुकेका तालहरू अन्वेषण गर्नुहोस्, जसको आफ्नै मिथक र सुन्दरता छ।"
+                                        "There are smaller lakes all around Rukumkot. The locals have stories about them.",
+                                        "रुकुमको वरिपरि साना तालहरू छन्। स्थानीयहरूका यस बारेमा आफ्नै कथाहरू छन्।"
                                     )}
                                 </p>
                             </div>
@@ -198,8 +172,8 @@ const Visit = () => {
                                 <h3>{t('Sisne Base Camp', 'सिस्ने आधार शिविर')}</h3>
                                 <p>
                                     {t(
-                                        "The journey to the base of Sisne is as majestic as the peak itself.",
-                                        "सिस्नेको फेदसम्मको यात्रा शिखर जत्तिकै भव्य छ।"
+                                        "Walking to the bottom of the mountain is just as nice as looking at the top.",
+                                        "हिमालको फेदसम्म हिँड्नु पनि शिखर हेर्नु जत्तिकै रमाइलो हुन्छ।"
                                     )}
                                 </p>
                             </div>
@@ -208,11 +182,11 @@ const Visit = () => {
                         <div className="visit-card">
                             <img src="/images/place to visit/hunting reserve.jpg" alt="Wilderness" className="no-watermark" />
                             <div className="visit-card-content">
-                                <h3>{t('Wilderness Exploration', 'जङ्गल अन्वेषण')}</h3>
+                                <h3>{t('The Forest', 'जङ्गल')}</h3>
                                 <p>
                                     {t(
-                                        "Deep forests and untouched trails waiting for explorers.",
-                                        "गहिरो जङ्गल र अछूत पदमार्गहरू अन्वेषकहरूको पर्खाइमा छन्।"
+                                        "The forests are thick here. Not many people go inside.",
+                                        "यहाँका जङ्गलहरू बाक्ला छन्। भित्र धेरै मान्छे जाँदैनन्।"
                                     )}
                                 </p>
                             </div>
@@ -223,5 +197,4 @@ const Visit = () => {
         </main>
     );
 };
-
 export default Visit;

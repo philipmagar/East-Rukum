@@ -8,17 +8,16 @@ const TakaVillage = () => {
     const [selectedImg, setSelectedImg] = useState(null);
 
     const takaImages = [
-        { src: '/images/villages/Tak village.jpg', alt: 'Classic Taka', caption: t('Traditional Architecture', 'परम्परागत वास्तुकला') },
-        { src: '/images/villages/tak during rainy season.png', alt: 'Rainy Season', caption: t('Lush Green Monsoon', 'हरियाली मनसुन') },
-        { src: '/images/villages/tak village from from far.jpg', alt: 'Panoramic View', caption: t('Village from Afar', 'टाढाबाट गाउँको दृश्य') },
-        { src: '/images/villages/tak school.jpg', alt: 'Tak School', caption: t('Community School', 'सामुदायिक विद्यालय') },
-        { src: '/images/villages/Tak villagee.jpg', alt: 'Village Life', caption: t('Daily Life in Tak', 'तकमा दैनिक जीवन') },
-        { src: '/images/villages/tak.jpg', alt: 'Historic Streets', caption: t('Ancient Pathways', 'प्राचीन गोरेटोहरू') },
+        { src: '/images/villages/Tak village.jpg', alt: 'Classic Taka', caption: t('Old houses', 'पुराना घरहरू') },
+        { src: '/images/villages/tak during rainy season.png', alt: 'Rainy Season', caption: t('Green in the rain', 'वर्षामा हरियाली') },
+        { src: '/images/villages/tak village from from far.jpg', alt: 'Panoramic View', caption: t('Looking from far away', 'टाढाबाट हेर्दा') },
+        { src: '/images/villages/tak school.jpg', alt: 'Tak School', caption: t('The village school', 'गाउँको विद्यालय') },
+        { src: '/images/villages/Tak villagee.jpg', alt: 'Village Life', caption: t('Just a normal day', 'साधारण दिन') },
+        { src: '/images/villages/tak.jpg', alt: 'Historic Streets', caption: t('Walking paths', 'हिँड्ने बाटोहरू') },
     ];
 
     return (
         <main>
-            {/* Image Modal Overlay */}
             <AnimatePresence>
                 {selectedImg && (
                     <motion.div
@@ -48,7 +47,6 @@ const TakaVillage = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-
             <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/villages/Tak village.jpg')" }}>
                 <motion.div
                     className="hero-content"
@@ -57,10 +55,9 @@ const TakaVillage = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <h1>{t('Tak', 'तक')}</h1>
-                    <p>{t('A journey through the heritage of Kham Magar people', 'खाम मगर समुदायको सम्पदाको यात्रा')}</p>
+                    <p>{t('See how the Kham Magar people live.', 'खाम मगर समुदाय कसरी बस्छन् हेर्नुहोस्।')}</p>
                 </motion.div>
             </section>
-
             <section className="intro">
                 <div className="container">
                     <motion.div
@@ -70,23 +67,23 @@ const TakaVillage = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2>{t('Heart of Kham Magar Culture', 'खाम मगर संस्कृतिको मुटु')}</h2>
+                        <h2>{t('The Main Village', 'मुख्य गाउँ')}</h2>
                         <p>
                             {t(
-                                "Tak (Taksera) is one of the most significant settlements in Eastern Rukum. Known for its unique stone-roofed houses clustered tightly on the mountainside, it represents the architectural and cultural pinnacle of the Kham Magar people. The village has a long history of self-governance and communal living, preserving ancient dialects and rituals that are rare in other parts of Nepal.",
-                                "तकसेरा पूर्वी रुकुमको सबैभन्दा महत्त्वपूर्ण बस्तीहरूमध्ये एक हो। पहाडको काखमा मिलेर बसेका ढुङ्गाले छाएका घरहरूका लागि चिनिने यो गाउँ खाम मगर समुदायको वास्तुकला र सांस्कृतिक शिखरको प्रतिनिधित्व गर्दछ। यस गाउँको स्वशासन र सामुदायिक जीवनको लामो इतिहास छ, जसले नेपालका अन्य भागहरूमा दुर्लभ रहेका प्राचीन भाषिका र संस्कारहरूलाई संरक्षण गरेको छ।"
+                                "Tak (or Taksera) is a big village up in the mountains. The houses are built close together with stone roofs. It’s quiet and feels old-fashioned here. People still speak the old language and follow the ways of their grandparents.",
+                                "तक (वा तकसेरा) पहाडमा अवस्थित एउटा ठूलो गाउँ हो। यहाँका घरहरू एक अर्कासँग जोिएर ढुङ्गाले छाएका छन्। यहाँ शान्त र पुरानो समय जस्तो महसुस हुन्छ। मानिसहरू अझै पनि पुरानो भाषा बोल्छन् र आफ्ना हजुरबुबा-हजुरआमाको बाटो पछ्याउँछन्।"
                             )}
                         </p>
                         <p>
                             {t(
-                                "Life in Taka is dictated by the seasons. From the vibrant green of the monsoon to the golden hues of autumn and the quiet, snow-covered winters, every change brings new traditions and activities. The people here are known for their hospitality, bravery, and deep connection to the land.",
-                                "तकसेरामा जीवन मौसम अनुसार चल्छ। मनसुनको हरियालीदेखि शरद ऋतुको पहेंलो रङ्ग र हिउँले ढाकिएको शान्त हिउँदसम्म, प्रत्येक परिवर्तनले नयाँ परम्परा र गतिविधिहरू ल्याउँछ। यहाँका मानिसहरू उनीहरूको आतिथ्य, बहादुरी र जमिनसँगको गहिरो सम्बन्धका लागि परिचित छन्।"
+                                "The weather changes everything here. When it rains, it gets really green. In autumn, the fields turn gold. In winter, there is snow. The people here are tough, but they are very kind to visitors.",
+                                "यहाँ मौसमले सबै कुरा परिवर्तन गर्छ। पानी पर्दा, यो एकदम हरियो हुन्छ। शरद ऋतुमा, खेतहरू सुनौलो हुन्छन्। जाडोमा, यहाँ हिउँ पर्छ। यहाँका मानिसहरू बलिया छन्, तर पाहुनाहरूप्रति धेरै दयालु छन्।"
                             )}
                         </p>
                     </motion.div>
                     <motion.div
                         className="intro-image"
-                        onClick={() => setSelectedImg({ src: '/images/villages/tak village from from far.jpg', alt: 'Panoramic Tak', caption: t('A Scenic View of Taka', 'तकसेराको मनोरम दृश्य') })}
+                        onClick={() => setSelectedImg({ src: '/images/villages/tak village from from far.jpg', alt: 'Panoramic Tak', caption: t('Looks nice from here', 'यहाँबाट राम्रो देखिन्छ') })}
                         style={{ cursor: 'pointer' }}
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -95,34 +92,25 @@ const TakaVillage = () => {
                         whileHover={{ scale: 1.02 }}
                     >
                         <img src="/images/villages/tak village from from far.jpg" alt="Panoramic Tak" className="no-watermark" />
-                        <div style={{ fontSize: '0.8rem', color: '#666', marginTop: '5px' }}>{t('Click to enlarge', 'ठूलो बनाउन क्लिक गर्नुहोस्')}</div>
+                        <div style={{ fontSize: '0.8rem', color: '#666', marginTop: '5px' }}>{t('Click to make bigger', 'ठूलो बनाउन क्लिक गर्नुहोस्')}</div>
                     </motion.div>
                 </div>
             </section>
-
             <section className="visit-grid-section">
                 <div className="container">
-                    <h2 className="section-title">{t('Gallery: Shades of Tak', 'ग्यालेरी: तकका विभिन्न रूपहरू')}</h2>
+                    <h2 className="section-title">{t('Gallery: Pictures of Tak', 'ग्यालेरी: तकका तस्बिरहरू')}</h2>
                     <motion.div
                         className="visit-grid"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
-                        transition={{ staggerChildren: 0.1 }}
-                    >
+                        transition={{ staggerChildren: 0.1 }}>
                         {takaImages.map((img, index) => (
-                            <motion.div
-                                key={index}
-                                className="visit-card"
-                                onClick={() => setSelectedImg(img)}
-                                style={{ cursor: 'pointer' }}
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.98 }}
-                            >
+                            <motion.div key={index}className="visit-card"onClick={() => setSelectedImg(img)}style={{ cursor: 'pointer' }}whileHover={{ scale: 1.05 }}whileTap={{ scale: 0.98 }} >
                                 <img src={img.src} alt={img.alt} className="no-watermark" />
                                 <div className="visit-card-content">
                                     <p style={{ textAlign: 'center', fontWeight: 'bold' }}>{img.caption}</p>
-                                    <div style={{ textAlign: 'center', fontSize: '0.8rem', color: '#666', marginTop: '5px' }}>{t('Click to view', 'हेर्न क्लिक गर्नुहोस्')}</div>
+                                    <div style={{ textAlign: 'center', fontSize: '0.8rem', color: '#666', marginTop: '5px' }}>{t('Click to see', 'हेर्न क्लिक गर्नुहोस्')}</div>
                                 </div>
                             </motion.div>
                         ))}
@@ -134,7 +122,7 @@ const TakaVillage = () => {
                 <div className="container">
                     <motion.div
                         className="intro-image"
-                        onClick={() => setSelectedImg({ src: '/images/villages/Tak villagee.jpg', alt: 'Village Life', caption: t('Authentic Village Atmosphere', 'प्रामाणिक गाउँको वातावरण') })}
+                        onClick={() => setSelectedImg({ src: '/images/villages/Tak villagee.jpg', alt: 'Village Life', caption: t('Real village life', 'वास्तविक गाउँको जीवन') })}
                         style={{ cursor: 'pointer' }}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -142,7 +130,7 @@ const TakaVillage = () => {
                         whileHover={{ scale: 1.02 }}
                     >
                         <img src="/images/villages/Tak villagee.jpg" alt="Village Life" />
-                        <div style={{ fontSize: '0.8rem', color: '#666', marginTop: '5px' }}>{t('Click to enlarge', 'ठूलो बनाउन क्लिक गर्नुहोस्')}</div>
+                        <div style={{ fontSize: '0.8rem', color: '#666', marginTop: '5px' }}>{t('Click to make bigger', 'ठूलो बनाउन क्लिक गर्नुहोस्')}</div>
                     </motion.div>
                     <motion.div
                         className="intro-text"
@@ -150,11 +138,11 @@ const TakaVillage = () => {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                     >
-                        <h2>{t('Sustainable Tourism & Homestays', 'दिगो पर्यटन र होमस्टे')}</h2>
+                        <h2>{t('Stay with the Locals', 'स्थानीयहरूसँग बस्नुहोस्')}</h2>
                         <p>
                             {t(
-                                "Visitors to Taka can experience the authentic lifestyle by staying in local homestays. Share traditional meals like Dhindo and Gundruk, learn about the symbolic meanings of house decorations, and participate in community dances like the Nachari.",
-                                "तकसेरा पुग्ने पर्यटकहरूले स्थानीय होमस्टेमा बसेर वास्तविक ग्रामीण जीवनको अनुभव गर्न सक्छन्। ढिँडो र गुन्द्रुक जस्ता परम्परागत खानाको स्वाद लिनुहोस्, घरको सजावटका प्रतीकात्मक अर्थहरूका बारेमा जान्नुहोस्, र नाचरी जस्ता सामुदायिक नृत्यहरूमा सहभागी हुनुहोस्।"
+                                "The best way to know this place is to stay in someone's home. You can eat dhindo and gundruk with them. You can ask them why they decorate their houses that way, or just watch the dances.",
+                                "यो ठाउँ जान्ने सबैभन्दा राम्रो तरिका कसैको घरमा बस्नु हो। तपाईं उनीहरूसँग ढिँडो र गुन्द्रुक खान सक्नुहुन्छ। तपाईंले उनीहरूलाई घरहरू त्यसरी किन सजाउँछन् भनेर सोध्न सक्नुहुन्छ, वा नाचहरू हेर्न सक्नुहुन्छ।"
                             )}
                         </p>
                     </motion.div>
@@ -164,6 +152,5 @@ const TakaVillage = () => {
         </main>
     );
 };
-
 export default TakaVillage;
 

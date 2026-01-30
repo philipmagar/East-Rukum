@@ -8,7 +8,6 @@ const Contact = () => {
         e.preventDefault();
         alert('Thank you for your message! / धन्यवाद! तपाईंको सन्देश प्राप्त भयो।');
     };
-
     return (
         <main style={{ background: 'var(--offwhite)', minHeight: '100vh', paddingTop: '120px' }}>
             <section className="premium-contact-section">
@@ -24,14 +23,12 @@ const Contact = () => {
                             borderRadius: '30px',
                             boxShadow: '0 30px 60px rgba(0,0,0,0.05)',
                             textAlign: 'center'
-                        }}
-                    >
+                        }}>
                         <motion.span
                             className="story-label"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
-                            transition={{ delay: 0.3 }}
-                        >
+                            transition={{ delay: 0.3 }}>
                             {t('Get in Touch', 'सम्पर्क गर्नुहोस्')}
                         </motion.span>
                         <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem', marginTop: '1rem' }}>
@@ -40,7 +37,6 @@ const Contact = () => {
                         <p style={{ color: '#666', marginBottom: '3rem', fontSize: '1.1rem' }}>
                             {t('Submit stories, photos, or support local initiatives. We would love to hear from you.', 'कथा, तस्बिर पठाउनुहोस् वा स्थानीय पहललाई समर्थन गर्नुहोस्। हामी तपाईंबाट सुन्न चाहन्छौं।')}
                         </p>
-
                         <form onSubmit={handleSubmit} style={{ textAlign: 'left', maxWidth: '600px', margin: '0 auto' }}>
                             <div className="form-group" style={{ marginBottom: '1.5rem' }}>
                                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>{t('Name', 'नाम')}</label>
@@ -57,7 +53,6 @@ const Contact = () => {
                                     }}
                                 />
                             </div>
-
                             <div className="form-group" style={{ marginBottom: '1.5rem' }}>
                                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>{t('Email', 'इमेल')}</label>
                                 <input
@@ -73,7 +68,6 @@ const Contact = () => {
                                     }}
                                 />
                             </div>
-
                             <div className="form-group" style={{ marginBottom: '2rem' }}>
                                 <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>{t('Message', 'सन्देश')}</label>
                                 <textarea
@@ -90,14 +84,7 @@ const Contact = () => {
                                     }}
                                 ></textarea>
                             </div>
-
-                            <motion.button
-                                type="submit"
-                                className="explore-btn"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                style={{ width: '100%', border: 'none' }}
-                            >
+                            <motion.button type="submit" className="explore-btn" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} style={{ width: '100%', border: 'none' }}>
                                 {t('Send Message', 'सन्देश पठाउनुहोस्')}
                             </motion.button>
                         </form>
@@ -115,10 +102,7 @@ const Contact = () => {
                                 <div>
                                     <span style={{ display: 'block', fontWeight: '700', textTransform: 'uppercase', fontSize: '0.8rem', color: 'var(--accent)', letterSpacing: '0.1em', marginBottom: '0.5rem' }}>
                                         {t('Location', 'स्थान')}
-                                    </span>
-                                    <p style={{ fontSize: '1.1rem', color: 'var(--dark)', fontWeight: '500', margin: 0 }}>
-                                        {t('East Rukum, Nepal', 'पूर्वी रुकुम, नेपाल')}
-                                    </p>
+                                    </span><p style={{ fontSize: '1.1rem', color: 'var(--dark)', fontWeight: '500', margin: 0 }}>{t('East Rukum, Nepal', 'पूर्वी रुकुम, नेपाल')}</p>
                                 </div>
                             </div>
                         </div>
@@ -128,5 +112,4 @@ const Contact = () => {
         </main>
     );
 };
-
 export default Contact;

@@ -12,9 +12,6 @@ const BackToTop = () => {
             setIsVisible(false);
         }
     };
-
-    // Set the top cordinate to 0
-    // make scrolling smooth
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,

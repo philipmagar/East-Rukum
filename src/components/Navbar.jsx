@@ -6,14 +6,12 @@ import { motion } from 'framer-motion';
 const Navbar = () => {
     const { lang, toggleLang } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
-
     return (
         <motion.header
             className="navbar"
             initial={{ y: -100 }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-        >
+            transition={{ duration: 0.6, ease: "easeOut" }}>
             <Link to="/" className="logo-container" onClick={() => setIsOpen(false)}>
                 <motion.div
                     className="logo-icon"
@@ -29,7 +27,6 @@ const Navbar = () => {
                     East Rukum
                 </motion.div>
             </Link>
-
             <div className="nav-controls">
                 <nav className={`nav-menu ${isOpen ? 'open' : ''}`}>
                     <ul className="nav-links">
@@ -45,30 +42,25 @@ const Navbar = () => {
                                 key={link.label}
                                 initial={{ opacity: 0, y: -20 }}
                                 animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.1 * index + 0.5 }}
-                            >
+                                transition={{ delay: 0.1 * index + 0.5 }}>
                                 <NavLink
                                     to={link.to}
                                     className={({ isActive }) => isActive ? "active-link" : ""}
-                                    onClick={() => setIsOpen(false)}
-                                >
+                                    onClick={() => setIsOpen(false)}>
                                     {link.label}
                                 </NavLink>
                             </motion.li>
                         ))}
                     </ul>
                 </nav>
-
                 <div className="navbar-actions">
                     <motion.button
                         id="langToggle"
                         onClick={toggleLang}
                         whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                    >
+                        whileTap={{ scale: 0.9 }}>
                         {lang === 'en' ? 'ने' : 'EN'}
                     </motion.button>
-
                     <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
                         <span className={`hamburger ${isOpen ? 'open' : ''}`}></span>
                     </button>
@@ -77,6 +69,5 @@ const Navbar = () => {
         </motion.header>
     );
 };
-
 export default Navbar;
 

@@ -12,7 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 const Home = () => {
     const { t } = useLanguage();
     const containerRef = useRef(null);
-
     useGSAP(() => {
         gsap.from('.intro-text', {
             scrollTrigger: {
@@ -24,7 +23,6 @@ const Home = () => {
             duration: 1,
             ease: 'power2.out'
         });
-
         gsap.from('.intro-image', {
             scrollTrigger: {
                 trigger: '.intro',
@@ -35,7 +33,6 @@ const Home = () => {
             duration: 1,
             ease: 'power2.out'
         });
-
         gsap.from('.feature-card', {
             scrollTrigger: {
                 trigger: '.features',
@@ -48,17 +45,14 @@ const Home = () => {
             ease: 'back.out(1.7)'
         });
     }, { scope: containerRef });
-
     const scrollToExplore = () => {
         const nextSection = document.getElementById('explore-section');
         if (nextSection) {
             nextSection.scrollIntoView({ behavior: 'smooth' });
         }
     };
-
     return (
         <main ref={containerRef}>
-            {/* HERO SECTION */}
             <section className="hero">
                 <motion.div
                     className="hero-content"
@@ -93,8 +87,6 @@ const Home = () => {
                     </motion.button>
                 </motion.div>
             </section>
-
-            {/* INTRO SECTION */}
             <section className="intro" id="explore-section">
                 <div className="container">
                     <div className="intro-text">
@@ -121,8 +113,6 @@ const Home = () => {
             </section>
 
             <Slider />
-
-            {/* CULTURAL SECTION */}
             <section className="storytelling-section">
                 <div className="container">
                     <div className="story-content">
@@ -168,8 +158,6 @@ const Home = () => {
                     </motion.div>
                 </div>
             </section>
-
-            {/* NATURE SECTION */}
             <section className="storytelling-section reverse">
                 <div className="container">
                     <div className="story-content">
@@ -215,17 +203,12 @@ const Home = () => {
                     </motion.div>
                 </div>
             </section>
-
-            {/* FEATURES TITLE */}
-            <section style={{ textAlign: 'center', paddingTop: '4rem' }}>
+                <section style={{ textAlign: 'center', paddingTop: '4rem' }}>
                 <h2 className="section-title" style={{ marginBottom: '1rem' }}>{t('Journey Through the District', 'जिल्लाको यात्रा')}</h2>
                 <p style={{ maxWidth: '700px', margin: '0 auto 3rem' }}>
                     {t('Whether you seek adventure, spiritual peace, or a connection with indigenous history, East Rukum has a path for you.', 'चाहे तपाईं साहसिक कार्य, आध्यात्मिक शान्ति, वा आदिवासी इतिहाससँगको सम्बन्ध खोज्नुहुन्छ, पूर्वी रुकुममा तपाईंको लागि एउटा बाटो छ।')}
                 </p>
             </section>
-
-            {/* FEATURES */}
-            {/* FEATURES DESCRIPTION */}
             <section className="features-description" style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem 3rem', textAlign: 'center', fontSize: '1.2rem', lineHeight: '1.8', color: '#4a5568' }}>
                 <p>
                     {t(
@@ -250,6 +233,5 @@ const Home = () => {
         </main>
     );
 };
-
 export default Home;
 
