@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
 import MusicPlayer from '../components/MusicPlayer';
-import { Helmet } from 'react-helmet-async';
 
 const Villages = () => {
     const { t } = useLanguage();
@@ -79,11 +78,6 @@ const Villages = () => {
 
     return (
         <main>
-            <Helmet>
-                <title>{t('Traditional Villages of East Rukum | Tak, Maikot & More', 'पूर्वी रुकुमका परम्परागत गाउँहरू | तक, मैकोट र थप')}</title>
-                <meta name="description" content={t('Explore the stone-roofed houses and ancient traditions of villages like Tak, Maikot, and Lukum in Eastern Rukum.', 'पूर्वी रुकुमका तक, मैकोट र लुकुम जस्ता गाउँहरूको ढुङ्गाले छाएका घर र प्राचीन परम्पराहरूको अन्वेषण गर्नुहोस्।')} />
-                <link rel="canonical" href="https://eastrukum.com/villages" />
-            </Helmet>
             <section className="hero village-hero" style={{
                 backgroundImage: 'linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("/images/villages/tak during rainy season.png")',
                 backgroundSize: 'cover',

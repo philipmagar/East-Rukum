@@ -39,8 +39,9 @@ const Contact = () => {
                         </p>
                         <form onSubmit={handleSubmit} style={{ textAlign: 'left', maxWidth: '600px', margin: '0 auto' }}>
                             <div className="form-group" style={{ marginBottom: '1.5rem' }}>
-                                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>{t('Name', 'नाम')}</label>
+                                <label htmlFor="name" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>{t('Name', 'नाम')}</label>
                                 <input
+                                    id="name"
                                     type="text"
                                     required
                                     style={{
@@ -54,8 +55,9 @@ const Contact = () => {
                                 />
                             </div>
                             <div className="form-group" style={{ marginBottom: '1.5rem' }}>
-                                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>{t('Email', 'इमेल')}</label>
+                                <label htmlFor="email" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>{t('Email', 'इमेल')}</label>
                                 <input
+                                    id="email"
                                     type="email"
                                     required
                                     style={{
@@ -69,8 +71,9 @@ const Contact = () => {
                                 />
                             </div>
                             <div className="form-group" style={{ marginBottom: '2rem' }}>
-                                <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>{t('Message', 'सन्देश')}</label>
+                                <label htmlFor="message" style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '600' }}>{t('Message', 'सन्देश')}</label>
                                 <textarea
+                                    id="message"
                                     rows="5"
                                     required
                                     style={{

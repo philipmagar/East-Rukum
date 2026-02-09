@@ -45,7 +45,8 @@ const MusicPlayer = () => {
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
-                title={isPlaying ? t('Mute Music', 'संगीत बन्द गर्नुहोस्') : t('Play Music', 'संगीत बजाउनुहोस्')}>
+                title={isPlaying ? t('Mute Music', 'संगीत बन्द गर्नुहोस्') : t('Play Music', 'संगीत बजाउनुहोस्')}
+                aria-label={isPlaying ? t('Mute Music', 'संगीत बन्द गर्नुहोस्') : t('Play Music', 'संगीत बजाउनुहोस्')}>
                 <div className="music-icon-wrapper">
                     {isPlaying ? (
                         <div className="music-waves">
