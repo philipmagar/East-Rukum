@@ -43,6 +43,7 @@ const Contact = () => {
                                 <input
                                     type="text"
                                     required
+                                    maxLength={100}
                                     style={{
                                         width: '100%',
                                         padding: '1.2rem',
@@ -58,6 +59,7 @@ const Contact = () => {
                                 <input
                                     type="email"
                                     required
+                                    maxLength={254}
                                     style={{
                                         width: '100%',
                                         padding: '1.2rem',
@@ -73,6 +75,7 @@ const Contact = () => {
                                 <textarea
                                     rows="5"
                                     required
+                                    maxLength={2000}
                                     style={{
                                         width: '100%',
                                         padding: '1.2rem',
