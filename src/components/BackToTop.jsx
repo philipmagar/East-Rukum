@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 const BackToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const { t } = useLanguage();
 
     // Show button when page is scrolled down
     const toggleVisibility = () => {
@@ -27,15 +29,16 @@ const BackToTop = () => {
     return (
         <AnimatePresence>
             {isVisible && (
-                <motion.div
+                <motion.button
                     onClick={scrollToTop}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 20 }}
                     whileHover={{ scale: 1.1 }}
+                    aria-label={t('Back to top', 'माथि जानुहोस्')}
                     style={{
                         position: 'fixed',
-                        bottom: '40px',
+                        bottom: '100px',
                         right: '40px',
                         backgroundColor: '#072507ff',
                         color: 'white',
@@ -48,11 +51,12 @@ const BackToTop = () => {
                         cursor: 'pointer',
                         boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
                         zIndex: 1000,
-                        fontSize: '24px'
+                        fontSize: '24px',
+                        border: 'none'
                     }}
                 >
                     ↑
-                </motion.div>
+                </motion.button>
             )}
         </AnimatePresence>
     );

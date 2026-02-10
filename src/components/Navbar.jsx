@@ -4,7 +4,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { motion, useScroll, useSpring } from 'framer-motion';
 
 const Navbar = () => {
-    const { lang, toggleLang } = useLanguage();
+    const { lang, toggleLang, t } = useLanguage();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const { scrollYProgress } = useScroll();
@@ -85,7 +85,8 @@ const Navbar = () => {
                 <div className="navbar-actions">
                     <motion.button
                         id="langToggle"
-                        onClick={toggleLang}
+                        onClick={toggleLanguage}
+                        aria-label={t('Switch to Nepali', 'अंग्रेजीमा स्विच गर्नुहोस्')}
                         whileHover={{
                             scale: 1.1,
                             backgroundColor: "var(--accent)",
