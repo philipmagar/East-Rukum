@@ -1,0 +1,27 @@
+{
+    "name": "East Rukum - Interactive Digital Journey",
+    "short_name": "East Rukum",
+    "description": "Explore East Rukum through interactive storytelling and cinematic experiences",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "/vite.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": [
+        "travel",
+        "tourism",
+        "culture"
+    ],
+    "lang": "en",
+    "dir": "ltr",
+    "scope": "/",
+    "screenshots": []
+}
