@@ -16,7 +16,7 @@ const Visit = () => {
 
     return (
         <main>
-            <section className="hero">
+            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/place to visit/sisne Himal.jpg')" }}>
                 <div className="hero-content">
                     <h1>{t('Places to go', 'घुम्ने ठाउँहरू')}</h1>
                     <p>{t('There are mountains, villages, and some old temples to see.', 'यहाँ हिमाल, गाउँ र केही पुराना मन्दिरहरू हेर्न पाइन्छ।')}</p>
@@ -25,7 +25,7 @@ const Visit = () => {
 
             <section className="storytelling-section" style={{ background: '#f0f4f8' }}>
                 <div className="container">
-                    <motion.div className="story-content"style={{ maxWidth: '100%', marginBottom: '2rem' }}initial={{ opacity: 0, y: 20 }}whileInView={{ opacity: 1, y: 0 }}viewport={{ once: true }}>
+                    <motion.div className="story-content" style={{ maxWidth: '100%', marginBottom: '2rem' }} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                         <div className="story-label" style={{ color: '#2c3e50', background: '#e1e8ed' }}>
                             {t('Quiet place', 'शान्त ठाउँ')}
                         </div>
@@ -49,13 +49,13 @@ const Visit = () => {
                     }}>
                         <AnimatePresence mode='wait'>
                             <motion.img key={currentChauriIndex} src={`/images/place to visit/chaurikharka(${currentChauriIndex + 1}).jpg`} alt={`Chaurikharka View ${currentChauriIndex + 1}`} style={{
-                                    width: '100%',
-                                    height: '100%',
-                                    objectFit: 'cover',
-                                    position: 'absolute',
-                                    top: 0,
-                                    left: 0
-                                }}
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                position: 'absolute',
+                                top: 0,
+                                left: 0
+                            }}
                                 initial={{ opacity: 0, scale: 1.1 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 exit={{ opacity: 0 }}
@@ -64,7 +64,8 @@ const Visit = () => {
                             />
                         </AnimatePresence>
 
-                        <div style={{position: 'absolute',bottom: 0,left: 0,right: 0,height: '50%',background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
+                        <div style={{
+                            position: 'absolute', bottom: 0, left: 0, right: 0, height: '50%', background: 'linear-gradient(to top, rgba(0,0,0,0.7), transparent)',
                             zIndex: 1
                         }}></div>
 
@@ -79,13 +80,13 @@ const Visit = () => {
                         }}>
                             {[0, 1, 2, 3, 4, 5].map((idx) => (
                                 <div key={idx} onClick={() => setCurrentChauriIndex(idx)} style={{
-                                        width: idx === currentChauriIndex ? '30px' : '10px',
-                                        height: '10px',
-                                        borderRadius: '5px',
-                                        background: idx === currentChauriIndex ? '#fff' : 'rgba(255,255,255,0.4)',
-                                        transition: 'all 0.3s ease',
-                                        cursor: 'pointer'
-                                    }}
+                                    width: idx === currentChauriIndex ? '30px' : '10px',
+                                    height: '10px',
+                                    borderRadius: '5px',
+                                    background: idx === currentChauriIndex ? '#fff' : 'rgba(255,255,255,0.4)',
+                                    transition: 'all 0.3s ease',
+                                    cursor: 'pointer'
+                                }}
                                 />
                             ))}
                         </div>
@@ -102,7 +103,7 @@ const Visit = () => {
             <section className="visit-grid-section">
                 <div className="container">
                     <h2 className="section-title">{t('Other places', 'अरु ठाउँहरू')}</h2>
-]
+                    ]
                     <div className="visit-grid">
                         <div className="visit-card">
                             <img src="/images/place to visit/sisne Himal.jpg" alt="Sisne Himal" />

@@ -6,7 +6,7 @@ const About = () => {
     const { t } = useLanguage();
     return (
         <main>
-            <section className="hero">
+            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/480f5b4c-9762-49dd-84b4-83b057b7f9d9.jpg')" }}>
                 <motion.div
                     className="hero-content"
                     initial={{ opacity: 0, y: 30 }}
@@ -17,153 +17,193 @@ const About = () => {
                 </motion.div>
             </section>
 
-            <section className="intro">
+            <section className="history-documentation" style={{ padding: '4rem 2rem', background: '#fff' }}>
                 <div className="container">
                     <motion.div
-                        className="intro-text"
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
+                        className="section-header"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}>
-                        <h2>{t('Geography & Climate', 'भूगोल र मौसम')}</h2>
-                        <p>
+                        style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                        <h2 className="section-title">{t('History & Documentation', 'इतिहास र अभिलेख')}</h2>
+                        <p className="max-w-2xl mx-auto text-gray-600">
                             {t(
-                                "Eastern Rukum is a hilly district in Karnali Province, featuring mountains like Sisne Himal, forests, rivers, and terraced farmlands. The climate varies from subtropical valleys to cold highlands.",
-                                "पूर्वी रुकुम कर्णाली प्रदेशको पहाडी जिल्ला हो। यहाँ सिस्ने हिमाल, जंगल, नदी र तहदेखि खेतहरू पाइन्छ। मौसम उपोष्णकटिबंधीयदेखि चिसो उच्चभूमिसम्म फरक छ।"
+                                "The formation of Eastern Rukum as a distinct district marks a significant milestone in Nepal's federal restructuring.",
+                                "पूर्वी रुकुमको एक छुट्टै जिल्लाको रूपमा गठन नेपालको संघीय पुनर्संरचनामा एक महत्वपूर्ण कोसेढ हो।"
                             )}
                         </p>
                     </motion.div>
-                    <motion.div
-                        className="intro-image"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}>
-                        <img src="/images/villages/village hero.jpg" alt="Eastern Rukum Village" className="no-watermark" />
-                    </motion.div>
-                </div>
-            </section>
 
-            <section className="admin-divisions" style={{ padding: '4rem 2rem', background: '#f8fafc' }}>
-                <div className="container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-                    <h2 className="section-title" style={{ textAlign: 'center', marginBottom: '4rem' }}>{t('Administrative Divisions', 'प्रशासनिक विभाजन')}</h2>
+                    <div className="history-content" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'start' }}>
+                        <motion.div
+                            className="history-text"
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}>
+                            <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#2C3E50' }}>{t('Formation & Division', 'गठन र विभाजन')}</h3>
+                            <p style={{ lineHeight: '1.8', color: '#4a5568', marginBottom: '1.5rem' }}>
+                                {t(
+                                    "Following the promulgation of the Constitution of Nepal in 2015, the country moved towards a federal structure. The former Rukum district was unique as it was split between two provinces. In 2017, it was officially divided into Eastern Rukum (part of Lumbini Province) and Western Rukum (part of Karnali Province).",
+                                    "२०७२ को नेपालको संविधान जारी भएपछि देश संघीय संरचनामा गयो। साविकको रुकुम जिल्ला दुई प्रदेशमा विभाजित भएकोले यो अनौठो थियो। २०७४ सालमा यसलाई औपचारिक रूपमा पूर्वी रुकुम (लुम्बिनी प्रदेश) र पश्चिमी रुकुम (कर्णाली प्रदेश) मा विभाजन गरियो।"
+                                )}
+                            </p>
+                            <p style={{ lineHeight: '1.8', color: '#4a5568' }}>
+                                {t(
+                                    "This division recognized the distinct geographical and cultural identity of the eastern Kham Magar region, allowing for more focused development and administrative accessibility for the remote highlands.",
+                                    "यो विभाजनले पूर्वी खाम मगर क्षेत्रको छुट्टै भौगोलिक र सांस्कृतिक पहिचानलाई मान्यता दियो, जसले दुर्गम उच्च पहाडी क्षेत्रका लागि थप केन्द्रित विकास र प्रशासनिक पहुँचको अनुमति दियो।"
+                                )}
+                            </p>
+                        </motion.div>
 
-                    <div className="municipality-list" style={{ display: 'flex', flexDirection: 'column', gap: '6rem' }}>
-                        <div className="rm-section" style={{ display: 'flex', alignItems: 'center', gap: '4rem', flexDirection: 'row' }}>
-                            <motion.div
-                                style={{ flex: 1 }}
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6 }}>
-                                <img
-                                    src="/images/villages/Tak village.jpg"
-                                    alt="Putha Uttarganga"
-                                    style={{ width: '100%', borderRadius: '20px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }}
-                                    className="no-watermark"
-                                />
-                            </motion.div>
-                            <motion.div
-                                style={{ flex: 1 }}
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6 }}>
-                                <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#2d3748' }}>
-                                    {t('Putha Uttarganga Rural Municipality', 'पुथा उत्तरगंगा गाउँपालिका')}
-                                </h3>
-                                <p style={{ fontSize: '1.1rem', color: '#4a5568', marginBottom: '1rem', lineHeight: '1.8' }}>
-                                    {t(
-                                        "As the largest municipality in the district, Putha Uttarganga encompasses the rugged high altitude terrains of Eastern Rukum. It is the heartland of the Kham Magar civilization, where ancient dialects and shamanistic traditions are preserved in their purest forms. The region is also the gateway to the Dhorpatan Hunting Reserve and is famous for its harvesting of Yarsagumba and spectacular alpine meadows.",
-                                        "जिल्लाको सबैभन्दा ठूलो गाउँपालिकाको रूपमा, पुथा उत्तरगंगाले पूर्वी रुकुमको कडा उच्च पहाडी भूभागहरू समेट्छ। यो खाम मगर सभ्यताको केन्द्रविन्दु हो, जहाँ प्राचीन भाषिका र धामीझाँक्री परम्पराहरू तिनको शुद्ध रूपमा संरक्षित छन्। यो क्षेत्र ढोरपाटन शिकार आरक्षणको प्रवेशद्वार पनि हो र यारसागुम्बा संकलन तथा शानदार लेकाली मैदानहरूका लागि प्रसिद्ध छ।"
-                                    )}
-                                </p>
-                                <h4 style={{ fontSize: '1.2rem', marginTop: '1.5rem', marginBottom: '0.8rem', color: '#2d3748', textTransform: 'uppercase', letterSpacing: '1px' }}>{t('Key Villages', 'प्रमुख गाउँहरू')}</h4>
-                                <ul style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', paddingLeft: '1.2rem', color: '#4a5568' }}>
-                                    <li>{t('Taksera (Tak)', 'तकसेरा (तक)')}</li>
-                                    <li>{t('Ranmamaikot', 'रणमामैकोट')}</li>
-                                    <li>{t('Hukam', 'हुकाम')}</li>
-                                    <li>{t('Kol', 'कोल')}</li>
-                                    <li>{t('Rangsi', 'राङ्सी')}</li>
-                                    <li>{t('Jang', 'जाङ')}</li>
-                                </ul>
-                            </motion.div>
-                        </div>
-                        <div className="rm-section" style={{ display: 'flex', alignItems: 'center', gap: '4rem', flexDirection: 'row-reverse' }}>
-                            <motion.div
-                                style={{ flex: 1 }}
-                                initial={{ opacity: 0, x: 50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.6 }}>
-                                <img src="/images/villages/lukum village.jpg" alt="Bhume" style={{ width: '100%', borderRadius: '20px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} className="no-watermark" />
-                            </motion.div>
-                            <motion.div style={{ flex: 1 }} initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                                <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#2d3748' }}>
-                                    {t('Bhume Rural Municipality', 'भूमे गाउँपालिका')}
-                                </h3>
-                                <p style={{ fontSize: '1.1rem', color: '#4a5568', marginBottom: '1rem', lineHeight: '1.8' }}>
-                                    {t(
-                                        "Bhume, meaning 'Land of the Earth', is culturally renowned for the vibrant Bhume Naach festival dedicated to the Earth deity. This region features lush temperate forests, terraced fields, and dense settlements. It bridges the gap between the highlands and the mid-hills, offering a rich blend of agriculture and indigenous culture.",
-                                        "भूमे, जसको अर्थ 'पृथ्वीको भूमि' हो, पृथ्वी देवतालाई समर्पित जीवन्त भूमे नाच पर्वका लागि सांस्कृतिक रूपमा प्रसिद्ध छ। यस क्षेत्रमा हरियाली समशीतोष्ण जंगल, कान्ला परेका खेतहरू र घना बस्तीहरू छन्। यसले उच्च पहाड र मध्य पहाडहरू बीचको खाडललाई जोड्छ, कृषि र आदिवासी संस्कृतिको धनी मिश्रण प्रदान गर्दछ।"
-                                    )}
-                                </p>
-                                <h4 style={{ fontSize: '1.2rem', marginTop: '1.5rem', marginBottom: '0.8rem', color: '#2d3748', textTransform: 'uppercase', letterSpacing: '1px' }}>{t('Key Villages', 'प्रमुख गाउँहरू')}</h4>
-                                <ul style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', paddingLeft: '1.2rem', color: '#4a5568' }}>
-                                    <li>{t('Kankri', 'कांक्री')}</li>
-                                    <li>{t('Lukum', 'लुकुम')}</li>
-                                    <li>{t('Mahat', 'महत')}</li>
-                                    <li>{t('Chunbang', 'चुनवाङ')}</li>
-                                    <li>{t('Morabang', 'मोरावाङ')}</li>
-                                    <li>{t('Khabang', 'खावाङ')}</li>
-                                </ul>
-                            </motion.div>
-                        </div>
-                        <div className="rm-section" style={{ display: 'flex', alignItems: 'center', gap: '4rem', flexDirection: 'row' }}>
-                            <motion.div style={{ flex: 1 }} initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                                <img src="/images/place to visit/sisne Himal.jpg" alt="Sisne" style={{ width: '100%', borderRadius: '20px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)' }} className="no-watermark" />
-                            </motion.div>
-                            <motion.div style={{ flex: 1 }} initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-                                <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#2d3748' }}>{t('Sisne Rural Municipality', 'सिस्ने गाउँपालिका')}</h3>
-                                <p style={{ fontSize: '1.1rem', color: '#4a5568', marginBottom: '1rem', lineHeight: '1.8' }}>{t("Dominated by the imposing presence of Sisne Himal (the virgin mountain), this municipality serves as the administrative center of the district. It is famous for Rukumkot (Chhippridaha), known as the 'City of 52 Lakes and 53 Hills', offering breathtaking views of reflections in Kamal Taal and starting points for high altitude treks.", "सिस्ने हिमाल (कुमारी हिमाल) को प्रभावशाली उपस्थितिले ओगटेको, यो गाउँपालिका जिल्लाको प्रशासनिक केन्द्रको रूपमा सेवा गर्दछ। यो रुकुमकोट (छिप्रिदह) का लागि प्रसिद्ध छ, जसलाई '५२ पोखरी र ५३ टाकुरीको शहर' भनेर चिनिन्छ, जहाँ कमल तालमा हिमालको प्रतिबिम्ब र उच्च पहाडी पदयात्राको सुरुवाती बिन्दुहरूको मनोरम दृश्य देखिन्छ।")}</p>
-                                <h4 style={{ fontSize: '1.2rem', marginTop: '1.5rem', marginBottom: '0.8rem', color: '#2d3748', textTransform: 'uppercase', letterSpacing: '1px' }}>{t('Key Villages', 'प्रमुख गाउँहरू')}</h4>
-                                <ul style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem', paddingLeft: '1.2rem', color: '#4a5568' }}>
-                                    <li>{t('Rukumkot', 'रुकुमकोट')}</li>
-                                    <li>{t('Sisne', 'सिस्ने')}</li>
-                                    <li>{t('Pwang', 'प्वाङ')}</li>
-                                    <li>{t('Syalkhadi', 'स्यालाखदी')}</li>
-                                    <li>{t('Pokhara', 'पोखरा')}</li>
-                                    <li>{t('Naigad', 'नाइगाड')}</li>
-                                </ul>
-                            </motion.div>
-                        </div>
+                        <motion.div
+                            className="timeline-container"
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.4 }}
+                            style={{ background: '#f8fafc', padding: '2rem', borderRadius: '15px' }}>
+                            <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem', color: '#2C3E50' }}>{t('Key Milestones', 'प्रमुख कोसेढहरू')}</h3>
+                            <ul style={{ listStyle: 'none', padding: 0 }}>
+                                {[
+                                    { year: '2015', title: t('New Constitution', 'नयाँ संविधान'), desc: t('Adoption of federalism in Nepal.', 'नेपालमा संघीयताको अंगीकार।') },
+                                    { year: '2017', title: t('Official Division', 'औपचारिक विभाजन'), desc: t('Rukum officially split into East and West.', 'रुकुम औपचारिक रूपमा पूर्व र पश्चिममा विभाजित।') },
+                                    { year: '2018', title: t('Local Elections', 'स्थानीय निर्वाचन'), desc: t('First local government established in new districts.', 'नयाँ जिल्लाहरूमा पहिलो स्थानीय सरकार स्थापना।') }
+                                ].map((item, index) => (
+                                    <li key={index} style={{ marginBottom: '1.5rem', position: 'relative', paddingLeft: '20px', borderLeft: '2px solid #e2e8f0' }}>
+                                        <span style={{ display: 'block', fontSize: '1.1rem', fontWeight: 'bold', color: '#8C3B2A' }}>{item.year}</span>
+                                        <strong style={{ display: 'block', color: '#2d3748' }}>{item.title}</strong>
+                                        <span style={{ fontSize: '0.9rem', color: '#718096' }}>{item.desc}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </motion.div>
                     </div>
                 </div>
             </section>
 
-            <section className="history-section" style={{ padding: '4rem 2rem', textAlign: 'center' }}>
-                <div className="container" style={{ maxWidth: '800px', margin: '0 auto' }}>
-                    <h2>{t('History & Culture', 'इतिहास र संस्कृति')}</h2>
-                    <p style={{ marginTop: '1rem', lineHeight: '1.8' }}>
-                        {t(
-                            "Eastern Rukum has a rich history shaped by indigenous Kham Magar traditions, migration patterns, and rural development. The region preserves unique languages, festivals, and communal lifestyles.",
-                            "पूर्वी रुकुमको समृद्ध इतिहास indigenous खाम मगर परम्परा, बसोबासको प्रवृत्ति र ग्रामीण विकासबाट आकारिएको छ। यहाँको भाषा, चाडपर्व र सामुदायिक जीवन अनौठो छ।"
-                        )}
-                    </p>
+            <section className="geography-demographics" style={{ padding: '4rem 2rem', background: '#f0f4f8' }}>
+                <div className="container">
+                    <motion.div
+                        className="section-header"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        style={{ textAlign: 'center', marginBottom: '4rem' }}>
+                        <h2 className="section-title">{t('Geography & Demographics', 'भूगोल र जनसांख्यिकी')}</h2>
+                        <p style={{ maxWidth: '800px', margin: '0 auto', color: '#4a5568' }}>
+                            {t(
+                                "Home to 56,786 people (2021 Census), Eastern Rukum spans from subtropical valleys to alpine peaks over 7,000m.",
+                                "५६,७८६ मानिसहरूको बसोबास (२०७८ जनगणना), पूर्वी रुकुम उपोष्णकटिबंधीय उपत्यकादेखि ७,००० मिटरभन्दा माथिका लेकाली चुचुराहरूसम्म फैलिएको छ।"
+                            )}
+                        </p>
+                    </motion.div>
+
+                    <div className="rm-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                        {[
+                            {
+                                name: t('Putha Uttarganga', 'पुथा उत्तरगंगा'),
+                                pop: '18,308',
+                                elev: '2,000m - 7,246m',
+                                feature: t('Highlands, Dhorpatan Reserve, Yarsagumba', 'उच्च पहाडी क्षेत्र, ढोरपाटन आरक्ष, यार्सागुम्बा'),
+                                img: '/images/villages/Tak village.jpg'
+                            },
+                            {
+                                name: t('Bhume', 'भूमे'),
+                                pop: '19,829',
+                                elev: '1,500m - 4,000m',
+                                feature: t('Cultural Hub, Guerilla Trek, Dense Forests', 'सांस्कृतिक केन्द्र, गुरिल्ला पदयात्रा, घना जंगल'),
+                                img: '/images/villages/lukum village.jpg'
+                            },
+                            {
+                                name: t('Sisne', 'सिस्ने'),
+                                pop: '18,534',
+                                elev: '900m - 6,000m',
+                                feature: t('Admin Center, Lakes, Kamal Taal', 'प्रशासनिक केन्द्र, तालहरू, कमल ताल'),
+                                img: '/images/place to visit/sisne Himal.jpg'
+                            }
+                        ].map((rm, idx) => (
+                            <motion.div
+                                key={idx}
+                                className="rm-card"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1 }}
+                                style={{ background: '#fff', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
+                                <div style={{ height: '200px', overflow: 'hidden' }}>
+                                    <img src={rm.img} alt={rm.name} className="no-watermark" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                                </div>
+                                <div style={{ padding: '1.5rem' }}>
+                                    <h3 style={{ fontSize: '1.25rem', marginBottom: '1rem', color: '#2d3748' }}>{rm.name}</h3>
+                                    <ul style={{ padding: 0, listStyle: 'none', fontSize: '0.95rem', color: '#4a5568' }}>
+                                        <li style={{ marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between' }}>
+                                            <span>{t('Population', 'जनसंख्या')}:</span> <strong>{rm.pop}</strong>
+                                        </li>
+                                        <li style={{ marginBottom: '0.5rem', display: 'flex', justifyContent: 'space-between' }}>
+                                            <span>{t('Elevation', 'उचाइ')}:</span> <strong>{rm.elev}</strong>
+                                        </li>
+                                        <li style={{ marginTop: '0.8rem', paddingTop: '0.8rem', borderTop: '1px solid #edf2f7', fontStyle: 'italic' }}>
+                                            {rm.feature}
+                                        </li>
+                                    </ul>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
                 </div>
             </section>
-            <section className="intro" style={{ borderTop: '1px solid #eee', textAlign: 'center', padding: '4rem 2rem' }}>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
-                    <h2 style={{ marginBottom: '2rem' }}>{t('Ready to see our villages?', 'हाम्रा गाउँहरू हेर्न तयार हुनुहुन्छ?')}</h2>
-                    <Link to="/villages.html" className="explore-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>
-                        {t('Explore Villages', 'गाउँहरू अन्वेषण गर्नुहोस्')}
-                    </Link>
-                </motion.div>
+
+            <section className="economy-livelihoods" style={{ padding: '4rem 2rem', background: '#fff' }}>
+                <div className="container">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        style={{ textAlign: 'center', marginBottom: '3rem' }}>
+                        <h2 className="section-title">{t('Economy & Livelihoods', 'अर्थतन्त्र र जीविकोपार्जन')}</h2>
+                    </motion.div>
+
+                    <div className="economy-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
+                        {[
+                            {
+                                img: '/images/lifestyle/livelihood.jpg',
+                                title: t('Agriculture', 'कृषि'),
+                                desc: t('Traditional farming of maize, wheat, barley, and potatoes form the backbone of daily life. Terraced fields are a common sight.', 'मकै, गहुँ, जौ र आलुको परम्परागत खेती दैनिक जीवनको मुख्य आधार हो। कान्ला परेका खेतहरू सामान्य दृश्य हुन्।')
+                            },
+                            {
+                                img: '/images/lifestyle/sheep.jpg',
+                                title: t('Livestock', 'पशुपालन'),
+                                desc: t('High-altitude herding of sheep, goats, and yaks is vital. Transhumance practices are still followed in the northern regions.', 'भेडा, बाख्रा र चौंरीको उच्च पहाडी पालन महत्वपूर्ण छ। उत्तरी क्षेत्रहरूमा मौसमी बसाइँसराइको अभ्यास अझै गरिन्छ।')
+                            },
+                            {
+                                img: '/images/lifestyle/searching for yarshagumba.gif',
+                                title: t('Herbs & Yarsagumba', 'जडीबुटी र यार्सा'),
+                                desc: t('Collection of Yarsagumba and medicinal herbs during the season is a major source of income for many households.', 'सिजनमा यार्सागुम्बा र जडीबुटी संकलन धेरै घरपरिवारको आम्दानीको मुख्य स्रोत हो।')
+                            },
+                            {
+                                img: '/images/jeep crossing river.jpg',
+                                title: t('Infrastructure', 'पूर्वाधार'),
+                                desc: t('Road connectivity constitutes the "Mid-Hill Highway" lifeline. Markets in Rukumkot and Burtibang serve as trade hubs.', 'सडक सञ्जालले "मध्य पहाडी लोकमार्ग" लाई जोड्छ। रुकुमकोट र बुर्तिबाङका बजारहरू व्यापारिक केन्द्र हुन्।')
+                            }
+                        ].map((item, idx) => (
+                            <motion.div
+                                key={idx}
+                                className="economy-card"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: idx * 0.1 }}
+                                style={{ padding: '2rem', background: '#fffbe6', borderRadius: '15px', border: '1px solid #e8dccb' }}>
+                                <img src={item.img} alt={item.title} style={{ width: '100%', height: '180px', objectFit: 'cover', borderRadius: '10px', marginBottom: '1rem' }} />
+                                <h3 style={{ marginBottom: '1rem', color: '#8C3B2A' }}>{item.title}</h3>
+                                <p style={{ color: '#555', lineHeight: '1.6' }}>{item.desc}</p>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
             </section>
+
         </main>
     );
 };

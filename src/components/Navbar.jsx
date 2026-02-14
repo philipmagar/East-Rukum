@@ -29,11 +29,12 @@ const Navbar = () => {
 
     const navItems = [
         { to: "/", label: "Home" },
-        { to: "/about", label: "About" },
-        { to: "/places", label: "Visit" },
-        { to: "/villages", label: "Villages" },
-        { to: "/culture", label: "Culture" },
-        { to: "/contact", label: "Contact" }
+        { to: "/about.html", label: "About" },
+        { to: "/places.html", label: "Visit" },
+        { to: "/villages.html", label: "Villages" },
+        { to: "/culture.html", label: "Culture" },
+        { to: "/gallery.html", label: "Gallery" },
+        { to: "/contact.html", label: "Contact" }
     ];
 
     return (
@@ -42,8 +43,6 @@ const Navbar = () => {
             initial={{ y: -100 }}
             animate={{ y: 0 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}>
-
-            {/* Scroll Progress Bar */}
             <motion.div className="scroll-progress-bar" style={{ scaleX }} />
 
             <Link to="/" className="logo-container" onClick={() => setIsOpen(false)}>
@@ -61,7 +60,6 @@ const Navbar = () => {
                     East Rukum
                 </motion.div>
             </Link>
-
             <div className="nav-controls">
                 <nav className={`nav-menu ${isOpen ? 'open' : ''}`}>
                     <ul className="nav-links">
@@ -109,6 +107,3 @@ const Navbar = () => {
     );
 };
 export default Navbar;
-
-
-

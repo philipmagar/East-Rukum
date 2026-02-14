@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
-import MusicPlayer from '../components/MusicPlayer';
 import { Helmet } from 'react-helmet-async';
 
 const Villages = () => {
@@ -190,7 +189,7 @@ const Villages = () => {
                     </motion.div>
                 </div>
             </section>
-            <MusicPlayer />
+
         </main>
     );
 };

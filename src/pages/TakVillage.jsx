@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
-import MusicPlayer from '../components/MusicPlayer';
 
 const TakaVillage = () => {
     const { t } = useLanguage();
@@ -106,7 +105,7 @@ const TakaVillage = () => {
                         viewport={{ once: true }}
                         transition={{ staggerChildren: 0.1 }}>
                         {takaImages.map((img, index) => (
-                            <motion.div key={index}className="visit-card"onClick={() => setSelectedImg(img)}style={{ cursor: 'pointer' }}whileHover={{ scale: 1.05 }}whileTap={{ scale: 0.98 }} >
+                            <motion.div key={index} className="visit-card" onClick={() => setSelectedImg(img)} style={{ cursor: 'pointer' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} >
                                 <img src={img.src} alt={img.alt} className="no-watermark" />
                                 <div className="visit-card-content">
                                     <p style={{ textAlign: 'center', fontWeight: 'bold' }}>{img.caption}</p>
@@ -148,7 +147,7 @@ const TakaVillage = () => {
                     </motion.div>
                 </div>
             </section>
-            <MusicPlayer />
+
         </main>
     );
 };

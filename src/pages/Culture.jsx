@@ -5,7 +5,7 @@ const Culture = () => {
 
     return (
         <main>
-            <section className="hero">
+            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/lifestyle/sheep grazing in wild.jpg')" }}>
                 <div className="hero-content">
                     <h1>{t('Kham Magar Culture', 'खाम मगर संस्कृति')}</h1>
                     <p>{t('Traditions, festivals, and lifestyle in Eastern Rukum', 'पूर्वी रुकुममा परम्परा, चाडपर्व र जीवनशैली')}</p>

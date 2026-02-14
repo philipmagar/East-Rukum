@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import Slider from '../components/Slider';
+
 import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -33,17 +34,7 @@ const Home = () => {
             duration: 1,
             ease: 'power2.out'
         });
-        gsap.from('.feature-card', {
-            scrollTrigger: {
-                trigger: '.features',
-                start: 'top 85%',
-            },
-            opacity: 0,
-            y: 50,
-            stagger: 0.2,
-            duration: 0.8,
-            ease: 'back.out(1.7)'
-        });
+
     }, { scope: containerRef });
     const scrollToExplore = () => {
         const nextSection = document.getElementById('explore-section');
@@ -53,7 +44,7 @@ const Home = () => {
     };
     return (
         <main ref={containerRef}>
-            <section className="hero">
+            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/place to visit/putha himal.jpg')" }}>
                 <motion.div
                     className="hero-content"
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -65,14 +56,14 @@ const Home = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5, duration: 0.8 }}
                     >
-                        {t('Discover Eastern Rukum', 'पूर्वी रुकुम चिनौँ')}
+                        {t('Putha Himala', 'पुथा हिमाल')}
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.8, duration: 0.8 }}
                     >
-                        {t('A land of mountains, culture, and community strength', 'हिमाल, संस्कृति र समुदायको भूमि')}
+                        {t('The Crown Jewel of Eastern Rukum', 'पूर्वी रुकुमको मुकुट मणि')}
                     </motion.p>
                     <motion.button
                         className="explore-btn"
@@ -203,7 +194,7 @@ const Home = () => {
                     </motion.div>
                 </div>
             </section>
-                <section style={{ textAlign: 'center', paddingTop: '4rem' }}>
+            <section style={{ textAlign: 'center', paddingTop: '4rem' }}>
                 <h2 className="section-title" style={{ marginBottom: '1rem' }}>{t('Journey Through the District', 'जिल्लाको यात्रा')}</h2>
                 <p style={{ maxWidth: '700px', margin: '0 auto 3rem' }}>
                     {t('Whether you seek adventure, spiritual peace, or a connection with indigenous history, East Rukum has a path for you.', 'चाहे तपाईं साहसिक कार्य, आध्यात्मिक शान्ति, वा आदिवासी इतिहाससँगको सम्बन्ध खोज्नुहुन्छ, पूर्वी रुकुममा तपाईंको लागि एउटा बाटो छ।')}
@@ -225,10 +216,12 @@ const Home = () => {
                 <Link to="/villages.html" className="explore-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>
                     {t('View Our Villages', 'हाम्रा गाउँहरू हेर्नुहोस्')}
                 </Link>
-                <Link to="/culture.html" className="explore-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>
-                    {t('Experience Culture', 'संस्कृति अनुभव गर्नुहोस्')}
+                <Link to="/gallery.html" className="explore-btn" style={{ textDecoration: 'none', display: 'inline-block' }}>
+                    {t('View Gallery', 'ग्यालरी हेर्नुहोस्')}
                 </Link>
             </section>
+
+
 
         </main>
     );
