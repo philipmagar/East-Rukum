@@ -1,32 +1,44 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 
 const MusicPlayer = () => {
     const [isPlaying, setIsPlaying] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
     const audioRef = useRef(null);
     const { t } = useLanguage();
+    const location = useLocation();
 
     const audioUrl = "/flute.m4a";
+    const villagePaths = ['/villages.html', '/taka-village', '/culture.html', '/places.html'];
+
     useEffect(() => {
-        const playAudio = async () => {
-            try {
-                await audioRef.current.play();
-                setIsPlaying(true);
-            } catch (err) {
-                console.log("Autoplay blocked. User interaction required.");
-            }
-        };
-        if (audioRef.current) {
+        const isVillageSection = villagePaths.includes(location.pathname);
+        setIsVisible(isVillageSection);
+
+        if (isVillageSection) {
+            const playAudio = async () => {
+                if (audioRef.current) {
+                    try {
+                        await audioRef.current.play();
+                        setIsPlaying(true);
+                    } catch (err) {
+                        console.log("Autoplay blocked. User interaction required.");
+                        setIsPlaying(false);
+                    }
+                }
+            };
             playAudio();
-        }
-        return () => {
+        } else {
             if (audioRef.current) {
                 audioRef.current.pause();
-                audioRef.current.currentTime = 0;
+                // When leaving, we reset isPlaying so it triggers again on return
+                setIsPlaying(false);
             }
-        };
-    }, []);
+        }
+    }, [location.pathname]);
+
     const togglePlay = () => {
         if (isPlaying) {
             audioRef.current.pause();
@@ -35,6 +47,7 @@ const MusicPlayer = () => {
         }
         setIsPlaying(!isPlaying);
     };
+    if (!isVisible) return null;
     return (
         <div className="music-player-fixed">
             <audio ref={audioRef} loop src={audioUrl} />

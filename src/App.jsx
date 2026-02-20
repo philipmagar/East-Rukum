@@ -11,12 +11,14 @@ import Contact from './pages/Contact';
 import TakaVillage from './pages/TakVillage';
 import ScrollToTop from './components/ScrollToTop';
 import BackToTop from './components/BackToTop';
+import MusicPlayer from './components/MusicPlayer';
 
 function App() {
     return (
         <Router>
             <ScrollToTop />
             <BackToTop />
+            <MusicPlayer />
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />

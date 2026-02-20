@@ -28,28 +28,13 @@ const BackToTop = () => {
         <AnimatePresence>
             {isVisible && (
                 <motion.div
+                    className="back-to-top"
                     onClick={scrollToTop}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.5 }}
                     whileHover={{ scale: 1.1 }}
-                    style={{
-                        position: 'fixed',
-                        bottom: '40px',
-                        right: '40px',
-                        backgroundColor: '#072507ff',
-                        color: 'white',
-                        width: '50px',
-                        height: '50px',
-                        borderRadius: '50%',
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        cursor: 'pointer',
-                        boxShadow: '0 4px 15px rgba(0,0,0,0.3)',
-                        zIndex: 1000,
-                        fontSize: '24px'
-                    }}
+                    whileTap={{ scale: 0.9 }}
                 >
                     ↑
                 </motion.div>
