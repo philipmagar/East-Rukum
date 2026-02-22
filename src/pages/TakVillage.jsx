@@ -7,11 +7,11 @@ const TakaVillage = () => {
     const [selectedImg, setSelectedImg] = useState(null);
 
     const takaImages = [
-        { src: '/images/villages/Tak village.jpg', alt: 'Classic Taka', caption: t('Old houses', 'पुराना घरहरू') },
-        { src: '/images/villages/tak during rainy season.png', alt: 'Rainy Season', caption: t('Green in the rain', 'वर्षामा हरियाली') },
-        { src: '/images/villages/tak village from from far.jpg', alt: 'Panoramic View', caption: t('Looking from far away', 'टाढाबाट हेर्दा') },
-        { src: '/images/villages/tak school.jpg', alt: 'Tak School', caption: t('The village school', 'गाउँको विद्यालय') },
-        { src: '/images/villages/Tak villagee.jpg', alt: 'Village Life', caption: t('Just a normal day', 'साधारण दिन') },
+        { src: '/images/villages/tak-village.jpg', alt: 'Classic Taka', caption: t('Old houses', 'पुराना घरहरू') },
+        { src: '/images/villages/tak-during-rainy-season.png', alt: 'Rainy Season', caption: t('Green in the rain', 'वर्षामा हरियाली') },
+        { src: '/images/villages/tak-village-far.jpg', alt: 'Panoramic View', caption: t('Looking from far away', 'टाढाबाट हेर्दा') },
+        { src: '/images/villages/tak-school.jpg', alt: 'Tak School', caption: t('The village school', 'गाउँको विद्यालय') },
+        { src: '/images/villages/tak-village-2.jpg', alt: 'Village Life', caption: t('Just a normal day', 'साधारण दिन') },
         { src: '/images/villages/tak.jpg', alt: 'Historic Streets', caption: t('Walking paths', 'हिँड्ने बाटोहरू') },
     ];
 
@@ -46,7 +46,7 @@ const TakaVillage = () => {
                     </motion.div>
                 )}
             </AnimatePresence>
-            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/villages/Tak village.jpg')" }}>
+            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/villages/tak-village.jpg')" }}>
                 <motion.div
                     className="hero-content"
                     initial={{ opacity: 0, y: 30 }}
@@ -82,7 +82,7 @@ const TakaVillage = () => {
                     </motion.div>
                     <motion.div
                         className="intro-image"
-                        onClick={() => setSelectedImg({ src: '/images/villages/tak village from from far.jpg', alt: 'Panoramic Tak', caption: t('Looks nice from here', 'यहाँबाट राम्रो देखिन्छ') })}
+                        onClick={() => setSelectedImg({ src: '/images/villages/tak-village-far.jpg', alt: 'Panoramic Tak', caption: t('Looks nice from here', 'यहाँबाट राम्रो देखिन्छ') })}
                         style={{ cursor: 'pointer' }}
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -90,7 +90,7 @@ const TakaVillage = () => {
                         transition={{ duration: 0.6 }}
                         whileHover={{ scale: 1.02 }}
                     >
-                        <img src="/images/villages/tak village from from far.jpg" alt="Panoramic Tak" className="no-watermark" />
+                        <img src="/images/villages/tak-village-far.jpg" alt="Panoramic Tak" className="no-watermark" />
                         <div style={{ fontSize: '0.8rem', color: '#666', marginTop: '5px' }}>{t('Click to make bigger', 'ठूलो बनाउन क्लिक गर्नुहोस्')}</div>
                     </motion.div>
                 </div>
@@ -121,14 +121,14 @@ const TakaVillage = () => {
                 <div className="container">
                     <motion.div
                         className="intro-image"
-                        onClick={() => setSelectedImg({ src: '/images/villages/Tak villagee.jpg', alt: 'Village Life', caption: t('Real village life', 'वास्तविक गाउँको जीवन') })}
+                        onClick={() => setSelectedImg({ src: '/images/villages/tak-village-2.jpg', alt: 'Village Life', caption: t('Real village life', 'वास्तविक गाउँको जीवन') })}
                         style={{ cursor: 'pointer' }}
                         initial={{ opacity: 0, scale: 0.9 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         whileHover={{ scale: 1.02 }}
                     >
-                        <img src="/images/villages/Tak villagee.jpg" alt="Village Life" />
+                        <img src="/images/villages/tak-village-2.jpg" alt="Village Life" />
                         <div style={{ fontSize: '0.8rem', color: '#666', marginTop: '5px' }}>{t('Click to make bigger', 'ठूलो बनाउन क्लिक गर्नुहोस्')}</div>
                     </motion.div>
                     <motion.div

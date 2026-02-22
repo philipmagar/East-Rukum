@@ -106,21 +106,21 @@ const About = () => {
                                 pop: '18,308',
                                 elev: '2,000m - 7,246m',
                                 feature: t('Highlands, Dhorpatan Reserve, Yarsagumba', 'उच्च पहाडी क्षेत्र, ढोरपाटन आरक्ष, यार्सागुम्बा'),
-                                img: '/images/villages/Tak village.jpg'
+                                img: '/images/villages/tak-village.jpg'
                             },
                             {
                                 name: t('Bhume', 'भूमे'),
                                 pop: '19,829',
                                 elev: '1,500m - 4,000m',
                                 feature: t('Cultural Hub, Guerilla Trek, Dense Forests', 'सांस्कृतिक केन्द्र, गुरिल्ला पदयात्रा, घना जंगल'),
-                                img: '/images/villages/lukum village.jpg'
+                                img: '/images/villages/lukum-village.jpg'
                             },
                             {
                                 name: t('Sisne', 'सिस्ने'),
                                 pop: '18,534',
                                 elev: '900m - 6,000m',
                                 feature: t('Admin Center, Lakes, Kamal Taal', 'प्रशासनिक केन्द्र, तालहरू, कमल ताल'),
-                                img: '/images/place to visit/sisne Himal.jpg'
+                                img: '/images/places/sisne-himal.jpg'
                             }
                         ].map((rm, idx) => (
                             <motion.div
@@ -177,12 +177,12 @@ const About = () => {
                                 desc: t('High-altitude herding of sheep, goats, and yaks is vital. Transhumance practices are still followed in the northern regions.', 'भेडा, बाख्रा र चौंरीको उच्च पहाडी पालन महत्वपूर्ण छ। उत्तरी क्षेत्रहरूमा मौसमी बसाइँसराइको अभ्यास अझै गरिन्छ।')
                             },
                             {
-                                img: '/images/lifestyle/searching for yarshagumba.gif',
+                                img: '/images/lifestyle/searching-for-yarshagumba.gif',
                                 title: t('Herbs & Yarsagumba', 'जडीबुटी र यार्सा'),
                                 desc: t('Collection of Yarsagumba and medicinal herbs during the season is a major source of income for many households.', 'सिजनमा यार्सागुम्बा र जडीबुटी संकलन धेरै घरपरिवारको आम्दानीको मुख्य स्रोत हो।')
                             },
                             {
-                                img: '/images/jeep crossing river.jpg',
+                                img: '/images/jeep-crossing-river.jpg',
                                 title: t('Infrastructure', 'पूर्वाधार'),
                                 desc: t('Road connectivity constitutes the "Mid-Hill Highway" lifeline. Markets in Rukumkot and Burtibang serve as trade hubs.', 'सडक सञ्जालले "मध्य पहाडी लोकमार्ग" लाई जोड्छ। रुकुमकोट र बुर्तिबाङका बजारहरू व्यापारिक केन्द्र हुन्।')
                             }

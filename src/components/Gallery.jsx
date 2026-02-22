@@ -9,14 +9,14 @@ const images = [
     { src: "/images/53fed32e-022d-4f78-a316-ad2c1517e41e.jpg", alt: "Traditional Architecture" },
     { src: "/images/879abfa3-3e70-44c4-a4e0-2f812f3fa2e3.jpg", alt: "Village Scene" },
     { src: "/images/9053aa88-e39a-41a3-8ac0-4cc08c7caced.jpg", alt: "Nature" },
-    { src: "/images/Animal Grazing.jpg", alt: "Animal Grazing" },
-    { src: "/images/Roads to village in the winter.jpg", alt: "Winter Roads" },
+    { src: "/images/animal-grazing.jpg", alt: "Animal Grazing" },
+    { src: "/images/roads-to-village-winter.jpg", alt: "Winter Roads" },
     { src: "/images/c896bbad-e958-430d-a6b1-b14a4f0e8722.jpg", alt: "Scenic Route" },
     { src: "/images/d556bf00-795e-46ef-a62e-7c90387b3d2d.jpg", alt: "Valley View" },
-    { src: "/images/jeep crossing river.jpg", alt: "Jeep Crossing River" },
-    { src: "/images/view (2).jpg", alt: "Panoramic View" },
-    { src: "/images/place to visit/putha himal 2.jpg", alt: "Putha Himala View 2" },
-    { src: "/images/place to visit/putha himal2.jpg", alt: "Putha Himala View 3" },
+    { src: "/images/jeep-crossing-river.jpg", alt: "Jeep Crossing River" },
+    { src: "/images/view-2.jpg", alt: "Panoramic View" },
+    { src: "/images/places/putha-himal-2.jpg", alt: "Putha Himala View 2" },
+    { src: "/images/places/putha-himal-3.jpg", alt: "Putha Himala View 3" },
 ];
 
 const Gallery = () => {

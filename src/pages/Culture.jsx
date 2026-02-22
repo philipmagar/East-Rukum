@@ -5,7 +5,7 @@ const Culture = () => {
 
     return (
         <main>
-            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/lifestyle/sheep grazing in wild.jpg')" }}>
+            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/lifestyle/sheep-grazing-in-wild.jpg')" }}>
                 <div className="hero-content">
                     <h1>{t('Kham Magar Culture', 'खाम मगर संस्कृति')}</h1>
                     <p>{t('Traditions, festivals, and lifestyle in Eastern Rukum', 'पूर्वी रुकुममा परम्परा, चाडपर्व र जीवनशैली')}</p>
@@ -44,7 +44,7 @@ const Culture = () => {
                         </p>
                     </div>
                     <div className="intro-image">
-                        <img src="/images/lifestyle/shepard lifestyle.jpg" alt="Kham Magar traditional dress and dance" />
+                        <img src="/images/lifestyle/shepherd-lifestyle.jpg" alt="Kham Magar traditional dress and dance" />
                     </div>
                 </div>
             </section>
@@ -59,7 +59,7 @@ const Culture = () => {
                     </p>
                     <div className="visit-grid">
                         <div className="visit-card">
-                            <img src="/images/lifestyle/shepard lifestyle.jpg" alt="Shepherd Lifestyle" className="no-watermark" />
+                            <img src="/images/lifestyle/shepherd-lifestyle.jpg" alt="Shepherd Lifestyle" className="no-watermark" />
                             <div className="visit-card-content">
                                 <h3>{t('Pastoral Heritage', 'पशुपालन सम्पदा')}</h3>
                                 <p>
@@ -71,7 +71,7 @@ const Culture = () => {
                             </div>
                         </div>
                         <div className="visit-card">
-                            <img src="/images/lifestyle/sheep grazing in wild.jpg" alt="Sheep Grazing" className="no-watermark" />
+                            <img src="/images/lifestyle/sheep-grazing-in-wild.jpg" alt="Sheep Grazing" className="no-watermark" />
                             <div className="visit-card-content">
                                 <h3>{t('Highland Grazing', 'उच्च भूमि चरन')}</h3>
                                 <p>
@@ -83,7 +83,7 @@ const Culture = () => {
                             </div>
                         </div>
                         <div className="visit-card">
-                            <img src="/images/lifestyle/mancrossing river.jpg" alt="River Crossing" className="no-watermark" />
+                            <img src="/images/lifestyle/man-crossing-river.jpg" alt="River Crossing" className="no-watermark" />
                             <div className="visit-card-content">
                                 <h3>{t('Mountain Trails', 'पहाडी बाटोहरू')}</h3>
                                 <p>

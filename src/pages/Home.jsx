@@ -44,7 +44,7 @@ const Home = () => {
     };
     return (
         <main ref={containerRef}>
-            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/place to visit/putha himal.jpg')" }}>
+            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/places/putha-himal.jpg')" }}>
                 <motion.div
                     className="hero-content"
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -145,7 +145,7 @@ const Home = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <img src="/images/lifestyle/shepard lifestyle.jpg" alt="Kham Magar Culture" className="no-watermark" />
+                        <img src="/images/lifestyle/shepherd-lifestyle.jpg" alt="Kham Magar Culture" className="no-watermark" />
                     </motion.div>
                 </div>
             </section>
@@ -190,7 +190,7 @@ const Home = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <img src="/images/place to visit/rukumkot lake.jpg" alt="Rukum Nature" className="no-watermark" />
+                        <img src="/images/places/rukumkot-lake.jpg" alt="Rukum Nature" className="no-watermark" />
                     </motion.div>
                 </div>
             </section>

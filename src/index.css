@@ -334,7 +334,7 @@ h3 {
 }
 
 .village-hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/lukum village.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/villages/lukum-village.jpg') center/cover no-repeat;
 }
 
 .btn {

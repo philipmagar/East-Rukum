@@ -16,7 +16,7 @@ const Visit = () => {
 
     return (
         <main>
-            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/place to visit/sisne Himal.jpg')" }}>
+            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/places/sisne-himal.jpg')" }}>
                 <div className="hero-content">
                     <h1>{t('Places to go', 'घुम्ने ठाउँहरू')}</h1>
                     <p>{t('There are mountains, villages, and some old temples to see.', 'यहाँ हिमाल, गाउँ र केही पुराना मन्दिरहरू हेर्न पाइन्छ।')}</p>
@@ -48,7 +48,7 @@ const Visit = () => {
                         background: '#000'
                     }}>
                         <AnimatePresence mode='wait'>
-                            <motion.img key={currentChauriIndex} src={`/images/place to visit/chaurikharka(${currentChauriIndex + 1}).jpg`} alt={`Chaurikharka View ${currentChauriIndex + 1}`} style={{
+                            <motion.img key={currentChauriIndex} src={`/images/places/chaurikharka-${currentChauriIndex + 1}.jpg`} alt={`Chaurikharka View ${currentChauriIndex + 1}`} style={{
                                 width: '100%',
                                 height: '100%',
                                 objectFit: 'cover',
@@ -106,7 +106,7 @@ const Visit = () => {
                     ]
                     <div className="visit-grid">
                         <div className="visit-card">
-                            <img src="/images/place to visit/sisne Himal.jpg" alt="Sisne Himal" />
+                            <img src="/images/places/sisne-himal.jpg" alt="Sisne Himal" />
                             <div className="visit-card-content">
                                 <h3>{t('Sisne Himal', 'सिस्ने हिमाल')}</h3>
                                 <p>
@@ -118,7 +118,7 @@ const Visit = () => {
                             </div>
                         </div>
                         <div className="visit-card">
-                            <img src="/images/place to visit/rukumkot lake.jpg" alt="Rukumkot" className="no-watermark" />
+                            <img src="/images/places/rukumkot-lake.jpg" alt="Rukumkot" className="no-watermark" />
                             <div className="visit-card-content">
                                 <h3>{t('Rukumkot', 'रुकुमकोट')}</h3>
                                 <p>
@@ -130,7 +130,7 @@ const Visit = () => {
                             </div>
                         </div>
                         <div className="visit-card">
-                            <img src="/images/place to visit/Thakur patan.png" alt="Thakur Patan" className="no-watermark" />
+                            <img src="/images/places/thakur-patan.png" alt="Thakur Patan" className="no-watermark" />
                             <div className="visit-card-content">
                                 <h3>{t('Thakur Patan', 'ठाकुर पाटन')}</h3>
                                 <p>
@@ -143,7 +143,7 @@ const Visit = () => {
                         </div>
 
                         <div className="visit-card">
-                            <img src="/images/place to visit/Dhorpatan-Hunting-Reserve.jpg" alt="Dhorpatan Hunting Reserve" />
+                            <img src="/images/places/Dhorpatan-Hunting-Reserve.jpg" alt="Dhorpatan Hunting Reserve" />
                             <div className="visit-card-content">
                                 <h3>{t('Dhorpatan Hunting Reserve', 'धोरपाटन शिकार रिजर्भ')}</h3>
                                 <p>
@@ -155,7 +155,7 @@ const Visit = () => {
                             </div>
                         </div>
                         <div className="visit-card">
-                            <img src="/images/place to visit/rukumkot lake (2).jpeg" alt="Rukumkot Lakes" className="no-watermark" />
+                            <img src="/images/places/rukumkot-lake-2.jpeg" alt="Rukumkot Lakes" className="no-watermark" />
                             <div className="visit-card-content">
                                 <h3>{t('Small Lakes', 'साना तालहरू')}</h3>
                                 <p>
@@ -168,7 +168,7 @@ const Visit = () => {
                         </div>
 
                         <div className="visit-card">
-                            <img src="/images/place to visit/sisne Himal(2).jpg" alt="Sisne Himal Trek" className="no-watermark" />
+                            <img src="/images/places/sisne-himal-2.jpg" alt="Sisne Himal Trek" className="no-watermark" />
                             <div className="visit-card-content">
                                 <h3>{t('Sisne Base Camp', 'सिस्ने आधार शिविर')}</h3>
                                 <p>
@@ -181,7 +181,7 @@ const Visit = () => {
                         </div>
 
                         <div className="visit-card">
-                            <img src="/images/place to visit/hunting reserve.jpg" alt="Wilderness" className="no-watermark" />
+                            <img src="/images/places/hunting-reserve.jpg" alt="Wilderness" className="no-watermark" />
                             <div className="visit-card-content">
                                 <h3>{t('The Forest', 'जङ्गल')}</h3>
                                 <p>

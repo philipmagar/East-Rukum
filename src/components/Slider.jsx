@@ -8,12 +8,12 @@ const slidesData = [
         np: 'ऐतिहासिक तक गाउँ',
     },
     {
-        img: '/images/place to visit/rukumkot lake.jpg',
+        img: '/images/places/rukumkot-lake.jpg',
         en: 'Serene Rukumkot Lake',
         np: 'शान्त रुकुमकोट ताल',
     },
     {
-        img: '/images/lifestyle/sheep grazing in wild.jpg',
+        img: '/images/lifestyle/sheep-grazing-in-wild.jpg',
         en: 'Highland Pastures',
         np: 'उच्च हिमाली बुकी',
     },
@@ -23,7 +23,7 @@ const slidesData = [
         np: 'जाडो लचिलोपन',
     },
     {
-        img: '/images/villages/maikot village.png',
+        img: '/images/villages/maikot-village.png',
         en: 'Historic Maikot Village',
         np: 'ऐतिहासिक मैकोट गाउँ',
     },
