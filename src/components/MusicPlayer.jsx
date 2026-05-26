@@ -1,53 +1,20 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
+import { useMusicPlayer } from '../hooks/useMusicPlayer';
 
 const MusicPlayer = () => {
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [isVisible, setIsVisible] = useState(false);
-    const audioRef = useRef(null);
     const { t } = useLanguage();
-    const location = useLocation();
-
+    
+    // We can define URL and paths here
     const audioUrl = "/flute.m4a";
+    // villagePaths could be generalized or hardcoded depending on the scale
     const villagePaths = ['/villages.html', '/taka-village', '/culture.html', '/places.html'];
 
-    useEffect(() => {
-        const isVillageSection = villagePaths.includes(location.pathname);
-        setIsVisible(isVillageSection);
+    const { isPlaying, isVisible, audioRef, togglePlay } = useMusicPlayer(audioUrl, villagePaths);
 
-        if (isVillageSection) {
-            const playAudio = async () => {
-                if (audioRef.current) {
-                    try {
-                        await audioRef.current.play();
-                        setIsPlaying(true);
-                    } catch (err) {
-                        console.log("Autoplay blocked. User interaction required.");
-                        setIsPlaying(false);
-                    }
-                }
-            };
-            playAudio();
-        } else {
-            if (audioRef.current) {
-                audioRef.current.pause();
-                // When leaving, we reset isPlaying so it triggers again on return
-                setIsPlaying(false);
-            }
-        }
-    }, [location.pathname]);
-
-    const togglePlay = () => {
-        if (isPlaying) {
-            audioRef.current.pause();
-        } else {
-            audioRef.current.play().catch(err => console.log("Audio play blocked by browser."));
-        }
-        setIsPlaying(!isPlaying);
-    };
     if (!isVisible) return null;
+
     return (
         <div className="music-player-fixed">
             <audio ref={audioRef} loop src={audioUrl} />
@@ -90,4 +57,5 @@ const MusicPlayer = () => {
         </div>
     );
 };
+
 export default MusicPlayer;

@@ -10,6 +10,53 @@ I built this because I think places like this are disappearing or getting forgot
 
 It's built using React because I wanted it to feel smooth when you move from the mountains to the villages.
 
+## Tech Stack
+
+- **Frontend Framework**: React 19
+- **Build Tool**: Vite
+- **Routing**: React Router DOM
+- **Animations**: Framer Motion, GSAP
+- **Styling**: Vanilla CSS (CSS Variables, Flexbox, Grid), PostCSS / Tailwind (Optional Utility Config)
+- **State Management**: React Context API
+
+## Why React?
+
+React is uniquely suited for building dynamic and interactive single-page applications. For the East Rukum website, React provides several critical advantages.
+
+## File Structure
+
+```text
+src/
+├── components/          # Global reusable UI components
+│   ├── ui/              # Dumb, presentation-only components (Hero, VisitCard, ImageModal)
+│   ├── BackToTop.jsx
+│   ├── Footer.jsx
+│   ├── Gallery.jsx
+│   ├── MusicPlayer.jsx
+│   ├── Navbar.jsx
+│   ├── ScrollToTop.jsx
+│   └── Slider.jsx
+├── context/             # React Context for global state (e.g., Language switch)
+│   └── LanguageContext.jsx
+├── hooks/               # Custom React hooks encapsulating logic
+│   ├── useFetchData.js
+│   └── useMusicPlayer.js
+├── pages/               # Main application views/routes
+│   ├── About.jsx
+│   ├── Contact.jsx
+│   ├── Culture.jsx
+│   ├── GalleryPage.jsx
+│   ├── Home.jsx
+│   ├── TakVillage.jsx
+│   ├── Villages.jsx
+│   └── Visit.jsx
+├── services/            # API and data fetching mechanisms
+│   └── apiService.js
+├── App.jsx              # Main routing and layout wrapper
+├── index.css            # Global CSS variables and styling
+└── main.jsx             # React app execution entry point
+```
+
 ## How to look at it
 
 If you want to run this on your computer:

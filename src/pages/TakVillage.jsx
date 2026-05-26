@@ -1,62 +1,27 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
+import Hero from '../components/ui/Hero';
+import VisitCard from '../components/ui/VisitCard';
+import ImageModal from '../components/ui/ImageModal';
+import { useFetchData } from '../hooks/useFetchData';
+import { apiService } from '../services/apiService';
 
 const TakaVillage = () => {
     const { t } = useLanguage();
     const [selectedImg, setSelectedImg] = useState(null);
 
-    const takaImages = [
-        { src: '/images/villages/tak-village.jpg', alt: 'Classic Taka', caption: t('Old houses', 'पुराना घरहरू') },
-        { src: '/images/villages/tak-during-rainy-season.png', alt: 'Rainy Season', caption: t('Green in the rain', 'वर्षामा हरियाली') },
-        { src: '/images/villages/tak-village-far.jpg', alt: 'Panoramic View', caption: t('Looking from far away', 'टाढाबाट हेर्दा') },
-        { src: '/images/villages/tak-school.jpg', alt: 'Tak School', caption: t('The village school', 'गाउँको विद्यालय') },
-        { src: '/images/villages/tak-village-2.jpg', alt: 'Village Life', caption: t('Just a normal day', 'साधारण दिन') },
-        { src: '/images/villages/tak.jpg', alt: 'Historic Streets', caption: t('Walking paths', 'हिँड्ने बाटोहरू') },
-    ];
-
+    const { data: takaImages, loading } = useFetchData(() => apiService.fetchTakVillageImages(t));
     return (
         <main>
-            <AnimatePresence>
-                {selectedImg && (
-                    <motion.div
-                        className="image-modal"
-                        onClick={() => setSelectedImg(null)}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                    >
-                        <motion.img
-                            src={selectedImg.src}
-                            alt={selectedImg.alt}
-                            className="modal-content"
-                            initial={{ scale: 0.8, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.8, opacity: 0 }}
-                            transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                        />
-                        <motion.div
-                            style={{ position: 'absolute', bottom: '20px', color: '#fff', textAlign: 'center', width: '100%', fontSize: '1.2rem', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
-                            initial={{ y: 20, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ delay: 0.2 }}
-                        >
-                            {selectedImg.caption}
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-            <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/villages/tak-village.jpg')" }}>
-                <motion.div
-                    className="hero-content"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h1>{t('Tak', 'तक')}</h1>
-                    <p>{t('See how the Kham Magar people live.', 'खाम मगर समुदाय कसरी बस्छन् हेर्नुहोस्।')}</p>
-                </motion.div>
-            </section>
+            <ImageModal selectedImg={selectedImg} onClose={() => setSelectedImg(null)} />
+            
+            <Hero 
+                bgImage="/images/villages/tak-village.jpg"
+                title={t('Tak', 'तक')}
+                subtitle={t('See how the Kham Magar people live.', 'खाम मगर समुदाय कसरी बस्छन् हेर्नुहोस्।')}
+            />
+            
             <section className="intro">
                 <div className="container">
                     <motion.div
@@ -104,14 +69,15 @@ const TakaVillage = () => {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                         transition={{ staggerChildren: 0.1 }}>
-                        {takaImages.map((img, index) => (
-                            <motion.div key={index} className="visit-card" onClick={() => setSelectedImg(img)} style={{ cursor: 'pointer' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.98 }} >
-                                <img src={img.src} alt={img.alt} className="no-watermark" />
-                                <div className="visit-card-content">
-                                    <p style={{ textAlign: 'center', fontWeight: 'bold' }}>{img.caption}</p>
-                                    <div style={{ textAlign: 'center', fontSize: '0.8rem', color: '#666', marginTop: '5px' }}>{t('Click to see', 'हेर्न क्लिक गर्नुहोस्')}</div>
-                                </div>
-                            </motion.div>
+                        {loading && <p>Loading images...</p>}
+                        {takaImages && takaImages.map((img, index) => (
+                            <VisitCard 
+                                key={index} 
+                                img={img.src} 
+                                title={img.caption} 
+                                desc={t('Click to see', 'हेर्न क्लिक गर्नुहोस्')}
+                                onClick={() => setSelectedImg(img)}
+                            />
                         ))}
                     </motion.div>
                 </div>
