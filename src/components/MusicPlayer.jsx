@@ -3,14 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../context/LanguageContext';
 import { useMusicPlayer } from '../hooks/useMusicPlayer';
 
+// We can define URL and paths here
+const audioUrl = "/flute.m4a";
+// villagePaths could be generalized or hardcoded depending on the scale
+const villagePaths = ['/villages.html', '/taka-village', '/culture.html', '/places.html', '/visit'];
+
 const MusicPlayer = () => {
     const { t } = useLanguage();
     
-    // We can define URL and paths here
-    const audioUrl = "/flute.m4a";
-    // villagePaths could be generalized or hardcoded depending on the scale
-    const villagePaths = ['/villages.html', '/taka-village', '/culture.html', '/places.html'];
-
     const { isPlaying, isVisible, audioRef, togglePlay } = useMusicPlayer(audioUrl, villagePaths);
 
     if (!isVisible) return null;

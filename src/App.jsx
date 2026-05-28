@@ -12,13 +12,19 @@ import TakaVillage from './pages/TakVillage';
 import ScrollToTop from './components/ScrollToTop';
 import BackToTop from './components/BackToTop';
 import MusicPlayer from './components/MusicPlayer';
+import CustomCursor from './components/CustomCursor';
+import DidYouKnow from './components/DidYouKnow';
+import { useLanguage } from './context/LanguageContext';
 
 function App() {
+    const { t } = useLanguage();
     return (
         <Router>
+            <CustomCursor />
             <ScrollToTop />
             <BackToTop />
             <MusicPlayer />
+            <DidYouKnow t={t} />
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
