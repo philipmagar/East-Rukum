@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
 import Hero from '../components/ui/Hero';
@@ -11,7 +11,8 @@ const TakaVillage = () => {
     const { t } = useLanguage();
     const [selectedImg, setSelectedImg] = useState(null);
 
-    const { data: takaImages, loading } = useFetchData(() => apiService.fetchTakVillageImages(t));
+    const fetchTakVillageImages = useCallback(() => apiService.fetchTakVillageImages(t), [t]);
+    const { data: takaImages, loading } = useFetchData(fetchTakVillageImages);
     return (
         <main>
             <ImageModal selectedImg={selectedImg} onClose={() => setSelectedImg(null)} />

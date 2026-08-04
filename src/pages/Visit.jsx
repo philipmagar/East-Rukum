@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import Hero from '../components/ui/Hero';
@@ -10,7 +10,8 @@ const Visit = () => {
     const { t } = useLanguage();
     const [currentChauriIndex, setCurrentChauriIndex] = useState(0);
 
-    const { data: destinations, loading } = useFetchData(() => apiService.fetchDestinations(t));
+    const fetchDestinations = React.useCallback(() => apiService.fetchDestinations(t), [t]);
+    const { data: destinations, loading } = useFetchData(fetchDestinations);
 
     useEffect(() => {
         const timer = setInterval(() => {
