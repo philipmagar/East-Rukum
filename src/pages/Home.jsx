@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import Slider from '../components/Slider';
 import StatsSection from '../components/StatsSection';
 import SeasonPicker from '../components/SeasonPicker';
+import SEO from '../components/SEO';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 import gsap from 'gsap';
@@ -127,6 +128,11 @@ const Home = () => {
 
     return (
         <main ref={containerRef}>
+            <SEO 
+                title="Home"
+                description="Experience the breathtaking natural beauty, rich Kham Magar heritage, and adventurous trails of Eastern Rukum, Nepal."
+                keywords="Eastern Rukum, Nepal travel, Putha Himal, Kham Magar, homestay, trekking"
+            />
             {/* Hero with parallax + particles + typewriter */}
             <section
                 className="hero hero-parallax"

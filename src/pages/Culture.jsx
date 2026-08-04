@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const cultureSections = [
     {
@@ -115,6 +116,11 @@ const Culture = () => {
 
     return (
         <main>
+            <SEO 
+                title="Kham Magar Culture"
+                description="Immerse yourself in the vibrant Kham Magar culture, traditions, festivals, and language of Eastern Rukum, Nepal."
+                keywords="Kham Magar, East Rukum culture, traditional dress, Nepal indigenous, Magar language"
+            />
             <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('/images/lifestyle/sheep-grazing-in-wild.jpg')" }}>
                 <motion.div
                     className="hero-content"
