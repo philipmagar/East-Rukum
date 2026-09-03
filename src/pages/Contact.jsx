@@ -1,5 +1,6 @@
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const Contact = () => {
     const { t } = useLanguage();
@@ -10,6 +11,11 @@ const Contact = () => {
     };
     return (
         <main style={{ background: 'var(--offwhite)', minHeight: '100vh', paddingTop: '120px' }}>
+            <SEO 
+                title="Contact & Contribute"
+                description="Get in touch with Eastern Rukum Tourism. Submit stories, photos, or learn more about visiting Rukum Purba, Nepal."
+                keywords="Contact East Rukum, contribute stories, tourism Nepal"
+            />
             <section className="premium-contact-section">
                 <div className="container" style={{ maxWidth: '800px', margin: '0 auto', display: 'block' }}>
                     <motion.div

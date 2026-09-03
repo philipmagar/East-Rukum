@@ -3,6 +3,7 @@ import { useLanguage } from '../context/LanguageContext';
 import { motion, AnimatePresence } from 'framer-motion';
 import Hero from '../components/ui/Hero';
 import VisitCard from '../components/ui/VisitCard';
+import SEO from '../components/SEO';
 import { useFetchData } from '../hooks/useFetchData';
 import { apiService } from '../services/apiService';
 
@@ -22,6 +23,11 @@ const Visit = () => {
 
     return (
         <main>
+            <SEO 
+                title="Destinations & Attractions"
+                description="Discover breathtaking places to visit in Eastern Rukum: Sisne Himal, Chaurikharka, Rukumkot, Thakur Patan, and Dhorpatan Reserve."
+                keywords="East Rukum tourism, Sisne Himal, Chaurikharka, Dhorpatan, Rukumkot"
+            />
             <Hero 
                 bgImage="/images/places/sisne-himal.jpg"
                 title={t('Places to go', 'घुम्ने ठाउँहरू')}

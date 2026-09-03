@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
 import { motion } from 'framer-motion';
+import SEO from '../components/SEO';
 
 const About = () => {
     const { t } = useLanguage();
     return (
         <main>
+            <SEO 
+                title="About Eastern Rukum"
+                description="Explore the geography, people, history, and local municipalities of Eastern Rukum (Rukum Purba), Lumbini Province, Nepal."
+                keywords="About East Rukum, Rukum Purba history, Putha Uttarganga, Bhume, Sisne"
+            />
             <section className="hero" style={{ backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/480f5b4c-9762-49dd-84b4-83b057b7f9d9.jpg')" }}>
                 <motion.div
                     className="hero-content"

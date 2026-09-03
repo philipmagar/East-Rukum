@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Hero from '../components/ui/Hero';
 import VisitCard from '../components/ui/VisitCard';
 import ImageModal from '../components/ui/ImageModal';
+import SEO from '../components/SEO';
 import { useFetchData } from '../hooks/useFetchData';
 import { apiService } from '../services/apiService';
 
@@ -15,6 +16,11 @@ const TakaVillage = () => {
     const { data: takaImages, loading } = useFetchData(fetchTakVillageImages);
     return (
         <main>
+            <SEO 
+                title="Tak Village (Taksera)"
+                description="Explore Tak (Taksera) village in Eastern Rukum, Nepal. See how the Kham Magar community lives in historic stone-roofed houses."
+                keywords="Tak Village, Taksera, Kham Magar, East Rukum villages, Nepal heritage"
+            />
             <ImageModal selectedImg={selectedImg} onClose={() => setSelectedImg(null)} />
             
             <Hero 
@@ -36,7 +42,7 @@ const TakaVillage = () => {
                         <p>
                             {t(
                                 "Tak (or Taksera) is a big village up in the mountains. The houses are built close together with stone roofs. It’s quiet and feels old-fashioned here. People still speak the old language and follow the ways of their grandparents.",
-                                "तक (वा तकसेरा) पहाडमा अवस्थित एउटा ठूलो गाउँ हो। यहाँका घरहरू एक अर्कासँग जोिएर ढुङ्गाले छाएका छन्। यहाँ शान्त र पुरानो समय जस्तो महसुस हुन्छ। मानिसहरू अझै पनि पुरानो भाषा बोल्छन् र आफ्ना हजुरबुबा-हजुरआमाको बाटो पछ्याउँछन्।"
+                                "तक (वा तकसेरा) पहाडमा अवस्थित एउटा ठूलो गाउँ हो। यहाँका घरहरू एक अर्कासँग जोडिएर ढुङ्गाले छाएका छन्। यहाँ शान्त र पुरानो समय जस्तो महसुस हुन्छ। मानिसहरू अझै पनि पुरानो भाषा बोल्छन् र आफ्ना हजुरबुबा-हजुरआमाको बाटो पछ्याउँछन्।"
                             )}
                         </p>
                         <p>
